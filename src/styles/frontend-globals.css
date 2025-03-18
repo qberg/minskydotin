@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+:root {
+  /* Minsky theme colors */
+  --minsky-black: oklch(0% 0 0);
+  --minsky-dark-gray: oklch(21.78% 0 0);
+  --minsky-charcoal: oklch(26.8% 0 0);
+  --minsky-gray: oklch(56.9% 0 0);
+  --minsky-light-gray: oklch(79.21% 0 0);
+  --minsky-white: oklch(100% 0 0);
+
+  --minsky-blue: oklch(49.27% 0.2362 265.11);
+  --minsky-dark-blue: oklch(27.48% 0.1476 263.55);
+  --minsky-blue-black: oklch(15.52% 0.0671 261.02);
+
+  --minsky-green: oklch(76.15% 0.202497 151.5169);
+  --minsky-periwinkle: oklch(78.52% 0.1084 271.58);
+}
+
+@theme inline {
+  /* Theme colors */
+  --color-background: var(--minsky-black);
+  --color-secondary-background: var(--minsky-dark-gray);
+
+  /* Font colors */
+  --color-primary: var(--minsky-white);
+  --color-secondary: var(--minsky-gray);
+
+  --color-light-gray: var(--minsky-light-gray);
+
+  /* Minsky fonts */
+  --font-space-grotesk: var(--font-space-grotesk);
+  --font-outfit: var(--font-outfit);
+
+  /* Font colors */
+}
+
+@layer base {
+  body {
+    @apply bg-background font-space-grotesk text-primary text-[16px];
+  }
+  h1 {
+    @apply text-[2.25em] sm:text-[5em];
+  }
+  h2 {
+    @apply text-[2em] sm:text-[3.75em];
+  }
+  h3 {
+    @apply text-[1.5em] sm:text-[2.75em];
+  }
+  h4 {
+    @apply text-[1.25em] sm:text-[2em];
+  }
+  h5 {
+    @apply text-[1em] sm:text-[1.5em];
+  }
+  p {
+    @apply text-[0.8em] sm:text-[1.5em];
+  }
+}
+
+@layer components {
+}
