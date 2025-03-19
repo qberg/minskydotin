@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="top-0 left-0">
-      <nav className="container mx-auto px-8 py-4 flex justify-between">
+      <nav className="container mx-auto px-8 py-4 flex justify-between h-[var(--navbar-height)]">
         <Link href="/" className="flex items-center">
           <Image src="/logo.svg" alt="Minsky logo" width={80} height={40} priority />
         </Link>
@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
                 className={`flex px-4 py-1 rounded-sm transition duration-200 ${
                   pathname === item.path
                     ? 'bg-background text-primary'
-                    : 'text-secondary hover:bg-background/50 hover:text-primary/65'
+                    : 'text-teritary hover:bg-background/50 hover:text-primary/65'
                 }`}
               >
                 {item.label}
