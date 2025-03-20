@@ -10,6 +10,7 @@
   --minsky-white: oklch(100% 0 0);
 
   --minsky-blue: oklch(49.27% 0.2362 265.11);
+  --minsky-glow-blue: oklch(54.02% 0.2203 266.25);
   --minsky-dark-blue: oklch(27.48% 0.1476 263.55);
   --minsky-blue-black: oklch(15.52% 0.0671 261.02);
 
@@ -26,10 +27,11 @@
 
   /* Font colors */
   --color-primary: var(--minsky-white);
-  --color-secondary: var(--minsky-charcoal);
+  --color-secondary: var(--minsky-gray);
   --color-teritary: var(--minsky-gray);
 
   --color-matrix-green: var(--minsky-green);
+  --color-glow-blue: var(--minsky-glow-blue);
 
   --color-light-gray: var(--minsky-light-gray);
 
@@ -40,7 +42,7 @@
 
 @layer base {
   body {
-    @apply bg-background font-space-grotesk text-primary text-[16px];
+    @apply bg-background font-space-grotesk text-primary text-[16px] box-border;
   }
   h1 {
     @apply text-[2.25em] sm:text-[5em] font-outfit leading-tight;
@@ -63,4 +65,12 @@
 }
 
 @layer components {
+  .full-glow-effect {
+    box-shadow:
+      0 0 20px 5px rgba(128, 128, 128, 0.3),
+      0 0 40px 10px rgba(128, 128, 128, 0.1);
+  }
+  .section-header {
+    @apply text-lg uppercase tracking-wider text-gray-600 mb-1;
+  }
 }

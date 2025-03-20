@@ -1,0 +1,51 @@
+import CodeBackground from './code-background'
+import {
+  Lightbulb,
+  FileText,
+  Settings,
+  Network,
+  FileCode,
+  Database,
+  Globe,
+  Clock,
+  Timer,
+} from 'lucide-react'
+import IconsGrid from './icons-grid'
+
+const MainHero = () => {
+  const icons = [
+    { Icon: Lightbulb, label: 'Ideas' },
+    { Icon: FileText, label: 'Documentation' },
+    { Icon: Settings, label: 'Configuration' },
+    { Icon: Network, label: 'Networking' },
+    { Icon: FileCode, label: 'Development' },
+    { Icon: Database, label: 'Database' },
+    { Icon: Globe, label: 'Web' },
+    { Icon: Clock, label: 'Scheduling' },
+    { Icon: Timer, label: 'Performance' },
+  ]
+  return (
+    <div className="relative min-h-[calc(100vh-var(--navbar-height))] flex items-center justify-center">
+      <div className="absolute inset-0 z-0">
+        <CodeBackground />
+      </div>
+      <div className="container">
+        <div className="w-[90%] mx-auto relative z-10 px-8 py-4 border-1 border-background bg-background rounded-2xl sm:rounded-2xl">
+          <div className="grid grid-cols-9 gap-8 sm:gap-16">
+            <h1 className="col-span-9 xl:col-span-5">
+              <span className="text-secondary">We Design, Develop, & Deploy</span>
+              <span className="text-primary"> Websites.</span>
+            </h1>
+
+            {/* Icons Grid */}
+            <div className="col-span-9">
+              <IconsGrid />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default MainHero

@@ -23,14 +23,15 @@ const CodeBackground = ({ lineHeight = 24 }: CodeBackgroundProps) => {
     calculateLines()
 
     const resizeObservor = new ResizeObserver(calculateLines)
+    const currentRef = containerRef.current
 
-    if (containerRef.current) {
-      resizeObservor.observe(containerRef.current)
+    if (currentRef) {
+      resizeObservor.observe(currentRef)
     }
 
     return () => {
-      if (containerRef.current) {
-        resizeObservor.unobserve(containerRef.current)
+      if (currentRef) {
+        resizeObservor.unobserve(currentRef)
       }
       resizeObservor.disconnect()
     }
