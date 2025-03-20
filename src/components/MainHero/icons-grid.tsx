@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import SketchAnimation from '../sketch-animations'
+import HatchedIcon from '../icons/hatched-icon'
 
 const icons = [
   { Icon: Lightbulb, label: 'Ideas' },
@@ -41,13 +42,10 @@ const IconsGrid = () => {
             size={44}
             className={`
               md:w-24 md:h-24 
-              transition-all duration-300 
+              transition-all duration-300
               ${hoveredIcon === index ? 'text-glow-blue filter drop-shadow-[0_0_12px_#1D4AE4]' : 'text-secondary'}
             `}
             aria-hidden={true}
-            strokeWidth={2}
-            strokeLinecap="round"
-            strokeDasharray="4,2"
           />
           <span className="sr-only">{label}</span>
           {hoveredIcon === index && (

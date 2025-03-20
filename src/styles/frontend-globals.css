@@ -35,6 +35,13 @@
 
   --color-light-gray: var(--minsky-light-gray);
 
+  /* Gradient colors */
+  --color-grad-one: #cfcfcf;
+  --color-grad-two: #c0c0c0;
+  --color-grad-three: #3f3f3f;
+  --color-grad-four: #a6a6a6;
+  --color-grad-five: #f6f6f6;
+
   /* Minsky fonts */
   --font-space-grotesk: var(--font-space-grotesk);
   --font-outfit: var(--font-outfit);

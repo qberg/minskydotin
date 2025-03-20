@@ -1,5 +1,6 @@
 import GridPattern from '../backgrounds/grid-pattern'
 import InteractiveGrid from '../backgrounds/interactive-grid'
+import ShweButton from '../ui/shwe-button'
 import CodeBackground from './code-background'
 import IconsGrid from './icons-grid'
 
@@ -35,8 +36,10 @@ const MainHero = () => {
             </div>
 
             <div className="col-span-9">
-              <div className="flex items-center justify-end pr-4">
-                <p>Button</p>
+              <div className="flex items-center justify-end pr-4 z-20">
+                <div className="w-[108px] h-[40px] sm:w-[180px] sm:h-[72px]">
+                  <ShweButton label="contact" />
+                </div>
               </div>
             </div>
           </div>
