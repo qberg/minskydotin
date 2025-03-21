@@ -42,7 +42,7 @@ const MainHero = () => {
             highlightColor="rgba(1, 212, 107, 0.5)"
             fadeTime={1500}
           />
-          <div className="relative grid grid-cols-9 gap-8 xl:gap-32">
+          <div className="relative grid grid-cols-9 gap-y-20 xl:gap-32">
             <h1 className="col-span-9 xl:col-span-5 z-0">
               <span className="text-secondary">We Design, Develop, & Deploy</span>
               <span className="text-primary"> Websites.</span>

@@ -40,7 +40,7 @@ const IconsGrid = () => {
         >
           <Icon
             size={44}
-            className={`
+            className={`w-14 h-14
               md:w-24 md:h-24 
               transition-all duration-300
               ${hoveredIcon === index ? 'text-glow-blue filter drop-shadow-[0_0_12px_#1D4AE4]' : 'text-secondary'}
