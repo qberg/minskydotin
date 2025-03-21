@@ -3,10 +3,10 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 
 import InteractiveGrid from '../backgrounds/interactive-grid'
-import ShweButton from '../ui/shwe-button'
 import CodeBackground from './code-background'
 import IconsGrid from './icons-grid'
 import { useRef } from 'react'
+import ShweayButton from '../ui/shweay-button'
 
 const MainHero = () => {
   const heroRef = useRef<HTMLDivElement>(null)
@@ -30,7 +30,7 @@ const MainHero = () => {
       </div>
       <motion.div style={{ scale }} className="container">
         <div
-          className="w-[90%] min-h-[600px] xl:min-h-[700px] mx-auto relative z-10 px-8 lg:px-12 py-16 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg"
+          className="w-[90%] h-[80vh] max-h-[800px] xl:h-[80vh] mx-auto relative z-10 px-8 lg:px-12 py-16 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg"
           style={{
             boxShadow:
               '0 0 20px 10px rgba(128, 128, 128, 0.3), 0 0 40px 20px rgba(128, 128, 128, 0.1)',
@@ -55,8 +55,8 @@ const MainHero = () => {
 
             <div className="col-span-9">
               <div className="flex items-center justify-end pr-4 z-20">
-                <div className="w-[108px] h-[40px] sm:w-[180px] sm:h-[72px]">
-                  <ShweButton label="contact" />
+                <div className="w-[108px] h-[40px] xl:w-[180px] xl:h-[72px]">
+                  <ShweayButton label="contact" />
                 </div>
               </div>
             </div>
