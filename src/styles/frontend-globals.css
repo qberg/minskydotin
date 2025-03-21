@@ -20,6 +20,10 @@
   --navbar-height: 90px;
 }
 
+@theme {
+  --text-m: clamp(0.8rem, 0.5rem + 1.25vw, 1.4rem);
+}
+
 @theme inline {
   /* Theme colors */
   --color-background: var(--minsky-black);
@@ -67,7 +71,7 @@
     @apply text-[1em] xl:text-[1.5em];
   }
   p {
-    @apply text-[0.8em] xl:text-[1.5em];
+    @apply text-m;
   }
 }
 

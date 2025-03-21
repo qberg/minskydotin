@@ -17,7 +17,7 @@ const MainHero = () => {
   })
 
   const opacity = useTransform(scrollYProgress, [0, 0.25, 0.5, 0.75], [1, 0.75, 0.25, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.5, 0.75], [1, 0.8, 0.6])
+  const scale = useTransform(scrollYProgress, [0, 0.35, 0.75], [1, 0.9, 0.7])
 
   return (
     <motion.section
@@ -30,8 +30,11 @@ const MainHero = () => {
       </div>
       <motion.div style={{ scale }} className="container">
         <div
-          className="w-[90%] h-[80vh] max-h-[800px] mx-auto relative z-10 px-8 lg:px-12 py-16 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg"
+          className="mx-auto relative z-10 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg"
           style={{
+            width: 'clamp(20rem, 90%, 100rem)',
+            height: 'clamp(25rem, 80vh, 50rem)',
+            padding: 'clamp(1rem, 4vw, 3rem)',
             boxShadow:
               '0 0 20px 10px rgba(128, 128, 128, 0.3), 0 0 40px 20px rgba(128, 128, 128, 0.1)',
           }}
@@ -42,7 +45,10 @@ const MainHero = () => {
             highlightColor="rgba(1, 212, 107, 0.5)"
             fadeTime={1500}
           />
-          <div className="relative grid grid-rows-[auto_1fr_auto] gap-y-8 h-full w-full">
+          <div
+            className="relative grid grid-rows-[auto_1fr_auto] h-full w-full"
+            style={{ gap: 'clamp(1rem, 4vh, 2.5rem)' }}
+          >
             {/* Row 1 : Heading */}
             <div className="grid grid-cols-9">
               <h1 className="col-span-9 md:col-span-7 lg:col-span-7 xl:col-span-6 2xl:col-span-5 z-20">
@@ -59,7 +65,13 @@ const MainHero = () => {
             {/* Row 3: Button*/}
             <div className="grid grid-cols-9">
               <div className="col-span-9 flex items-center justify-end pr-4 z-20">
-                <div className="w-[108px] h-[40px] xl:w-[180px] xl:h-[72px]">
+                {' '}
+                <div
+                  style={{
+                    width: 'clamp(108px, 15vw, 180px)',
+                    height: 'clamp(40px, 6vw, 72px)',
+                  }}
+                >
                   <ShweayButton label="contact" />
                 </div>
               </div>
