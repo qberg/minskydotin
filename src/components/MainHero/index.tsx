@@ -1,16 +1,34 @@
-import GridPattern from '../backgrounds/grid-pattern'
+'use client'
+
+import { motion, useScroll, useTransform } from 'motion/react'
+
 import InteractiveGrid from '../backgrounds/interactive-grid'
 import ShweButton from '../ui/shwe-button'
 import CodeBackground from './code-background'
 import IconsGrid from './icons-grid'
+import { useRef } from 'react'
 
 const MainHero = () => {
+  const heroRef = useRef<HTMLDivElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['end end', 'end start'],
+  })
+
+  const opacity = useTransform(scrollYProgress, [0, 0.25, 0.5, 0.75], [1, 0.75, 0.25, 0])
+  const scale = useTransform(scrollYProgress, [0, 0.5, 0.75], [1, 0.8, 0.6])
+
   return (
-    <div className="relative min-h-[calc(100vh-var(--navbar-height))] flex items-center justify-center">
+    <motion.section
+      style={{ opacity: opacity }}
+      ref={heroRef}
+      className="relative min-h-[calc(100vh-var(--navbar-height))] flex items-center justify-center"
+    >
       <div className="absolute inset-0 z-0">
         <CodeBackground />
       </div>
-      <div className="container">
+      <motion.div style={{ scale }} className="container">
         <div
           className="w-[90%] min-h-[600px] xl:min-h-[700px] mx-auto relative z-10 px-8 lg:px-12 py-16 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg"
           style={{
@@ -44,8 +62,8 @@ const MainHero = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.section>
   )
 }
 
