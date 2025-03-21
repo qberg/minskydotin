@@ -30,7 +30,7 @@ const IconsGrid = () => {
   const [hoveredIcon, setHoveredIcon] = useState<number | null>(null)
 
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-9 gap-6">
+    <div className="grid grid-cols-3 lg:grid-cols-9 xl:grid-cols-9 gap-6 col-span-9">
       {icons.map(({ Icon, label }, index) => (
         <div
           key={index}
@@ -41,7 +41,7 @@ const IconsGrid = () => {
           <Icon
             size={44}
             className={`w-14 h-14
-              md:w-24 md:h-24 
+              xl:w-24 xl:h-24 
               transition-all duration-300
               ${hoveredIcon === index ? 'text-glow-blue filter drop-shadow-[0_0_12px_#1D4AE4]' : 'text-secondary'}
             `}
@@ -49,7 +49,7 @@ const IconsGrid = () => {
           />
           <span className="sr-only">{label}</span>
           {hoveredIcon === index && (
-            <div className="relative hidden sm:block">
+            <div className="relative hidden xl:block">
               <SketchAnimation
                 direction={index < 5 ? 'bottomRight' : index === 8 ? 'topLeft' : 'topRight'}
                 title="[Server]"

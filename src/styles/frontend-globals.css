@@ -52,7 +52,7 @@
     @apply bg-background font-space-grotesk text-primary text-[16px] box-border;
   }
   h1 {
-    @apply text-[2.25em] xl:text-[5em] font-outfit leading-tight;
+    @apply text-[2.25em] md:text-[2.25em] xl:text-[5em] font-outfit leading-tight;
   }
   h2 {
     @apply text-[2em] xl:text-[3.75em] font-outfit;

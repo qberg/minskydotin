@@ -30,7 +30,7 @@ const MainHero = () => {
       </div>
       <motion.div style={{ scale }} className="container">
         <div
-          className="w-[90%] h-[80vh] max-h-[800px] xl:h-[80vh] mx-auto relative z-10 px-8 lg:px-12 py-16 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg"
+          className="w-[90%] h-[80vh] max-h-[800px] mx-auto relative z-10 px-8 lg:px-12 py-16 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg"
           style={{
             boxShadow:
               '0 0 20px 10px rgba(128, 128, 128, 0.3), 0 0 40px 20px rgba(128, 128, 128, 0.1)',
@@ -42,19 +42,23 @@ const MainHero = () => {
             highlightColor="rgba(1, 212, 107, 0.5)"
             fadeTime={1500}
           />
-          <div className="relative grid grid-cols-9 gap-y-20 xl:gap-32">
-            <h1 className="col-span-9 xl:col-span-5 z-0">
-              <span className="text-secondary">We Design, Develop, & Deploy</span>
-              <span className="text-primary"> Websites.</span>
-            </h1>
+          <div className="relative grid grid-rows-[auto_1fr_auto] gap-y-8 h-full w-full">
+            {/* Row 1 : Heading */}
+            <div className="grid grid-cols-9">
+              <h1 className="col-span-9 md:col-span-7 lg:col-span-7 xl:col-span-6 2xl:col-span-5 z-20">
+                <span className="text-secondary">We Design, Develop, & Deploy</span>
+                <span className="text-primary"> Websites.</span>
+              </h1>
+            </div>
 
-            {/* Icons Grid */}
-            <div className="col-span-9 z-20">
+            {/* Row 2: Icons Grid */}
+            <div className="grid grid-cols-9 z-20">
               <IconsGrid />
             </div>
 
-            <div className="col-span-9">
-              <div className="flex items-center justify-end pr-4 z-20">
+            {/* Row 3: Button*/}
+            <div className="grid grid-cols-9">
+              <div className="col-span-9 flex items-center justify-end pr-4 z-20">
                 <div className="w-[108px] h-[40px] xl:w-[180px] xl:h-[72px]">
                   <ShweayButton label="contact" />
                 </div>
