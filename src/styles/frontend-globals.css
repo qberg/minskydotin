@@ -55,7 +55,7 @@
     @apply text-[2.25em] sm:text-[5em] font-outfit leading-tight;
   }
   h2 {
-    @apply text-[2em] sm:text-[3.75em];
+    @apply text-[2em] sm:text-[3.75em] font-outfit;
   }
   h3 {
     @apply text-[1.5em] sm:text-[2.75em];

@@ -3,7 +3,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import { motion, useMotionValueEvent, useScroll } from 'motion/react'
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -13,9 +14,28 @@ const navItems = [
 
 const Navbar: React.FC = () => {
   const pathname = usePathname()
+  const [isHidden, setIsHidden] = useState(false)
+  const { scrollY } = useScroll()
+  const lastYRef = useRef(0)
+
+  useMotionValueEvent(scrollY, 'change', (y) => {
+    const difference = y - lastYRef.current
+
+    if (Math.abs(difference) > 50) {
+      setIsHidden(difference > 0)
+      lastYRef.current = y
+    }
+  })
 
   return (
-    <header className="top-0 left-0">
+    <motion.header
+      variants={{ hidden: { y: '-90%' }, visible: { y: '0%' } }}
+      transition={{ duration: 0.25 }}
+      animate={isHidden ? 'hidden' : 'visible'}
+      whileHover="visible"
+      onFocusCapture={() => setIsHidden(false)}
+      className="top-0 left-0 sticky z-50"
+    >
       <nav className="container mx-auto px-8 py-4 flex justify-between h-[var(--navbar-height)]">
         <Link href="/" className="flex items-center">
           <Image src="/logo.svg" alt="Minsky logo" width={80} height={40} priority />
@@ -58,7 +78,7 @@ const Navbar: React.FC = () => {
           </svg>
         </button>
       </nav>
-    </header>
+    </motion.header>
   )
 }
 
