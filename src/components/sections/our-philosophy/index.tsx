@@ -65,7 +65,7 @@ const OurPhilosophy: FC = () => {
   )
 
   // Staggered text delays for each paragraph
-  const getTextDelay = (index: number) => {
+  const useTextDelay = (index: number) => {
     return {
       opacity: useTransform(
         scrollYProgress,
@@ -80,10 +80,9 @@ const OurPhilosophy: FC = () => {
     }
   }
 
-  const text1Anim = getTextDelay(0)
-  const text2Anim = getTextDelay(1)
-  const text3Anim = getTextDelay(2)
-
+  const text1Anim = useTextDelay(0)
+  const text2Anim = useTextDelay(1)
+  const text3Anim = useTextDelay(2)
   return (
     <motion.section
       ref={philRef}
