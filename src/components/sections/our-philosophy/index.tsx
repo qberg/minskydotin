@@ -157,8 +157,8 @@ const OurPhilosophy: FC = () => {
                 y: text3Anim.y,
               }}
             >
-              Our ultimate goal is to create software that doesn't just work today but grows and
-              evolves with the people who rely on it. Software that can be maintained without
+              Our ultimate goal is to create software that doesn&apos;t just work today but grows
+              and evolves with the people who rely on it. Software that can be maintained without
               heroics, and scale without breaking the bank. This approach aligns with our belief
               that the best technology solutions are those that fade into the background, quietly
               and reliably serving human needs rather than demanding attention for themselves.
