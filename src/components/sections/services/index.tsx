@@ -1,9 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'motion/react'
 
-import DashedGridPattern from '@/components/backgrounds/dashed-grid-pattern'
 import { servicesData } from '@/data/service'
 import { useRef } from 'react'
 import ServiceCard from '@/components/ui/service-card'
