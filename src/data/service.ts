@@ -1,10 +1,10 @@
-interface ServiceData {
+export interface ServiceData {
   title: string
   svgPath: string
   tags: string[]
 }
 
-const servicesData: ServiceData[] = [
+export const servicesData: ServiceData[] = [
   {
     title: 'Design',
     svgPath: '/s1.svg',
@@ -21,5 +21,3 @@ const servicesData: ServiceData[] = [
     tags: ['High Availability', 'Zero Downtime Deployments', 'Go-Live Support and Maintenance'],
   },
 ]
-
-export default servicesData
