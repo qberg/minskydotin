@@ -15,20 +15,20 @@ const DashedGridPattern = () => {
             linear-gradient(
               to bottom,
               transparent 0%,
-              transparent 10%,
-              #000 10%,
-              #000 90%,
-              transparent 90%,
+              transparent 20%,
+              #000 20%,
+              #000 80%,
+              transparent 80%,
               transparent 100%
             )
           `,
           WebkitMaskImage: `linear-gradient(
             to bottom,
             transparent 0%,
-            transparent 10%,
-            black 10%,
-            black 90%,
-            transparent 90%,
+            transparent 20%,
+            black 20%,
+            black 80%,
+            transparent 80%,
             transparent 100%
           )`,
         }}
