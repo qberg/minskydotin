@@ -1,16 +1,67 @@
+'use client'
+
+import Image from 'next/image'
+import { motion, useScroll, useTransform } from 'motion/react'
+
 import DashedGridPattern from '@/components/backgrounds/dashed-grid-pattern'
 import servicesData from '@/data/service'
-import Image from 'next/image'
+import { useRef } from 'react'
+
+const animationOrder = {
+  initial: 0,
+  headerStart: 0.2,
+  headerEnd: 0.35,
+  cardsStart: 0.25,
+  cardsEnd: 0.4,
+}
 
 const Services = () => {
+  const targetRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ['start end', 'end start'],
+  })
+
+  const headerOpacity = useTransform(
+    scrollYProgress,
+    [animationOrder.headerStart, animationOrder.headerEnd],
+    [0, 1],
+  )
+
+  const headerY = useTransform(
+    scrollYProgress,
+    [animationOrder.headerStart, animationOrder.headerEnd],
+    ['20px', '0px'],
+  )
+
+  const cardsOpcaity = useTransform(
+    scrollYProgress,
+    [animationOrder.cardsStart, animationOrder.cardsEnd],
+    [0, 1],
+  )
+
+  const cardsY = useTransform(
+    scrollYProgress,
+
+    [animationOrder.cardsStart, animationOrder.cardsEnd],
+    [60, 0],
+  )
+
   return (
-    <section className="min-h-screen flex items-center justify-center relative">
+    <section ref={targetRef} className="min-h-screen flex items-center justify-center relative">
       <div
         className="container mx-auto flex flex-col"
         style={{ padding: 'clamp(1.5rem, 1.5vw, 2.5rem)', gap: 'clamp(1rem, 4vw, 3.5rem)' }}
       >
-        <div style={{ fontSize: 'clamp(2rem,4vw, 3.75rem)' }}>/Our Services</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <motion.div
+          style={{ fontSize: 'clamp(2rem,4vw, 3.75rem)', opacity: headerOpacity, y: headerY }}
+        >
+          /Our Services
+        </motion.div>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          style={{ opacity: cardsOpcaity, y: cardsY }}
+        >
           {servicesData.map((service, index) => (
             <div
               key={index}
@@ -30,7 +81,7 @@ const Services = () => {
                     <Image
                       src={service.svgPath}
                       alt={service.title}
-                      layout="fill"
+                      fill
                       className={`object-contain`}
                     />
                   </div>
@@ -54,7 +105,7 @@ const Services = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

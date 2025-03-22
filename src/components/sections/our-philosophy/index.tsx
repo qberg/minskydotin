@@ -17,6 +17,8 @@ const animationOrder = {
   monitorEnd: 0.45,
   textStart: 0.4,
   textEnd: 0.55,
+  sectionFadeOutStart: 0.65,
+  final: 0.9,
 }
 
 const OurPhilosophy: FC = () => {
@@ -25,6 +27,12 @@ const OurPhilosophy: FC = () => {
     target: philRef,
     offset: ['start end', 'end start'],
   })
+
+  const sectionOpacity = useTransform(
+    scrollYProgress,
+    [animationOrder.sectionFadeOutStart, animationOrder.final],
+    [1, 0],
+  )
 
   // Grid opacity animation
   const gridOpacity = useTransform(
@@ -87,6 +95,7 @@ const OurPhilosophy: FC = () => {
     <motion.section
       ref={philRef}
       className="min-h-screen flex items-center justify-center relative"
+      style={{ opacity: sectionOpacity }}
     >
       <motion.div style={{ opacity: gridOpacity }}>
         <DashedGridPattern />

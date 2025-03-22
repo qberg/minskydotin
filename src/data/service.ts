@@ -18,7 +18,7 @@ const servicesData: ServiceData[] = [
   {
     title: 'Deploy',
     svgPath: 's3.svg',
-    tags: ['High Availability', 'Zero Downtime', 'Maintenance'],
+    tags: ['High Availability', 'Zero Downtime Deployments', 'Go-Live Support and Maintenance'],
   },
 ]
 
