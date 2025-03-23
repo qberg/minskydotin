@@ -13,7 +13,7 @@ const Works = () => {
             <div
               key={index}
               style={{ minHeight: 'clamp(7rem, 8vh, 11rem)' }}
-              className="border border-widecard-border py-8 px-0 xl:py-8 xl:pl-12"
+              className="border-b border-widecard-border py-8 px-0 xl:py-8 xl:pl-12"
             >
               <div className="flex items-center justify-between">
                 <div className="flex flex-col justify-start items-start">
