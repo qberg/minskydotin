@@ -25,7 +25,7 @@ const MainHero = () => {
       ref={heroRef}
       className="relative min-h-[calc(100vh-var(--navbar-height))] flex items-center justify-center"
     >
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 -z-20">
         <CodeBackground />
       </div>
       <motion.div style={{ scale }} className="container">
@@ -51,7 +51,7 @@ const MainHero = () => {
           >
             {/* Row 1 : Heading */}
             <div className="grid grid-cols-9">
-              <h1 className="col-span-9 md:col-span-7 lg:col-span-7 xl:col-span-6 2xl:col-span-5 -z-20">
+              <h1 className="col-span-9 md:col-span-7 lg:col-span-7 xl:col-span-7 2xl:col-span-5 -z-10">
                 <span className="text-secondary">We Design, Develop, & Deploy</span>
                 <span className="text-primary"> Websites.</span>
               </h1>

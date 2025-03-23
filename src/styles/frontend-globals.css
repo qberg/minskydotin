@@ -21,10 +21,12 @@
 }
 
 @theme {
-  --text-m: clamp(0.8rem, 0.5rem + 1.25vw, 1.4rem);
-  --text-xl: clamp(1.5rem, 1rem + 1.25vw, 2.75rem);
   --text-2xs: clamp(0.75rem, 0.5rem + 1.25vw, 1.25rem);
   --text-s: clamp(0.875rem, 0.5rem + 1.25vw, 1.25rem);
+  --text-m: clamp(0.8rem, 0.5rem + 1.25vw, 1.4rem);
+  --text-xl: clamp(1.5rem, 1rem + 1.25vw, 2.75rem);
+  --text-2xl: clamp(2rem, 1.5rem + 1.25vw, 3.75rem);
+  --text-3xl: clamp(2.25rem, 1.75rem + 2.5vw, 5rem);
 }
 
 @theme inline {
@@ -45,6 +47,10 @@
   --color-badge-border: var(--minsky-gray);
   --color-badge-foreground: var(--minsky-light-gray);
 
+  /* wide card */
+  --color-widecard-border: var(--minsky-gray);
+  --color-widecard-secondary: var(--minsky-light-gray);
+
   --color-matrix-green: var(--minsky-green);
   --color-glow-blue: var(--minsky-glow-blue);
 
@@ -63,14 +69,17 @@
 }
 
 @layer base {
+  html {
+    @apply text-[16px];
+  }
   body {
     @apply bg-background font-space-grotesk text-primary text-[16px] box-border;
   }
   h1 {
-    @apply text-[2.25em] md:text-[2.25em] xl:text-[5em] font-outfit leading-tight;
+    @apply text-3xl font-outfit leading-tight;
   }
   h2 {
-    @apply text-[2em] xl:text-[3.75em] font-outfit;
+    @apply text-2xl font-outfit;
   }
   h3 {
     @apply text-xl leading-tight;

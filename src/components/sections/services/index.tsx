@@ -50,11 +50,7 @@ const Services = () => {
         className="container mx-auto flex flex-col"
         style={{ padding: 'clamp(1.5rem, 1.5vw, 2.5rem)', gap: 'clamp(1rem, 4vw, 3.5rem)' }}
       >
-        <motion.div
-          style={{ fontSize: 'clamp(2rem,4vw, 3.75rem)', opacity: headerOpacity, y: headerY }}
-        >
-          /Our Services
-        </motion.div>
+        <motion.h2 style={{ opacity: headerOpacity, y: headerY }}>/Our Services</motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {servicesData.map((service, index) => (
             <ServiceCard

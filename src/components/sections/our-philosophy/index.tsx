@@ -107,9 +107,8 @@ const OurPhilosophy: FC = () => {
           gap: 'clamp(1rem,4vw,3.5rem)',
         }}
       >
-        <motion.div
+        <motion.h2
           style={{
-            fontSize: 'clamp(2rem,4vw, 3.75rem)',
             opacity: headerOpacity,
             y: headerY,
           }}
@@ -120,7 +119,7 @@ const OurPhilosophy: FC = () => {
           }}
         >
           /Our Development Philosophy
-        </motion.div>
+        </motion.h2>
 
         <div className="grid grid-cols-12 gap-4">
           <motion.div

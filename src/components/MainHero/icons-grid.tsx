@@ -30,7 +30,7 @@ const IconsGrid = () => {
 
   return (
     <div
-      className="col-span-9 w-full grid grid-cols-3 xl:grid-cols-9"
+      className="col-span-9 w-full grid grid-cols-3 lg:grid-cols-9 xl:grid-cols-9"
       style={{
         gap: 'clamp(0.5rem, 2vw, 1.5rem)',
       }}
