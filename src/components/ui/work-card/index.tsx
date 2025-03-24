@@ -21,7 +21,7 @@ const WorkCard = ({
   return (
     <div
       style={{ minHeight: 'clamp(7rem, 8vh, 11rem)' }}
-      className="border-b border-widecard-border py-8 px-0 xl:py-8 xl:pl-12 xl:rounded-xl overflow-hidden"
+      className={`border-b border-widecard-border py-8 px-0 xl:py-8 xl:pl-12 overflow-hidden ${isHovered ? 'rounded-xl border' : ''}`}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}
     >
