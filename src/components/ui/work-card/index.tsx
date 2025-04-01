@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
 
 import { WorkData } from '@/data/works-data'
 import { CircleArrowOutUpRight } from 'lucide-react'
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 
 interface WorkCardProps {
   work: WorkData
@@ -35,7 +35,7 @@ const WorkCard = ({
   const imgTop = useTransform(mouseYSpring, [0.5, -0.5], ['40%', '60%'])
   const imgLeft = useTransform(mouseXSpring, [0.5, -0.5], ['60%', '70%'])
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     if (!targetRef.current) return
 
     const rect = targetRef.current.getBoundingClientRect()
