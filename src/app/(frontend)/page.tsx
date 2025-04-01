@@ -3,6 +3,8 @@ import OurPhilosophy from '@/components/sections/our-philosophy'
 import Services from '@/components/sections/services'
 import React from 'react'
 import Works from '@/components/sections/works'
+import Products from '@/components/sections/products'
+import OurClients from '@/components/sections/our-clients'
 
 export default async function HomePage() {
   return (
@@ -11,6 +13,8 @@ export default async function HomePage() {
       <OurPhilosophy />
       <Services />
       <Works />
+      <Products />
+      <OurClients />
     </div>
   )
 }

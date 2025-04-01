@@ -50,6 +50,7 @@
   /* wide card */
   --color-widecard-border: var(--minsky-gray);
   --color-widecard-secondary: var(--minsky-light-gray);
+  --color-widecard-divder: var(--minsky-charcoal);
 
   --color-matrix-green: var(--minsky-green);
   --color-glow-blue: var(--minsky-glow-blue);

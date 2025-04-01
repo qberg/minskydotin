@@ -2,6 +2,7 @@ import React from 'react'
 import '@/styles/frontend-globals.css'
 import { spaceGrotesk, outfit } from '@/fonts'
 import Navbar from '@/components/Navbar'
+import LenisProvider from '@/components/LenisProvider'
 
 export const metadata = {
   description: 'Digital presence of Minsky labs',
@@ -15,7 +16,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
     <html lang="en" className={`${spaceGrotesk.variable} ${outfit.variable} antialiased`}>
       <body>
         <Navbar />
-        <main>{children}</main>
+        <LenisProvider>
+          <main>{children}</main>
+        </LenisProvider>
       </body>
     </html>
   )
