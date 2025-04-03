@@ -36,7 +36,7 @@ const ServiceCard = ({ service, index, parentScrollYProgress }: ServiceCardProps
     <motion.div
       ref={cardRef}
       className="relative bg-card-background rounded-xl overflow-hidden hover:cursor-pointer"
-      style={{ minHeight: 'clamp(21rem, 40vh, 35rem)', opacity: parentOpacity, y, scale }}
+      style={{ minHeight: 'clamp(20rem, 40vh, 35rem)', opacity: parentOpacity, y, scale }}
       initial={{ y: 0 }}
       whileHover={{
         y: -32,
@@ -82,7 +82,7 @@ const ServiceCard = ({ service, index, parentScrollYProgress }: ServiceCardProps
             [{index + 1}]
           </motion.span>
           <motion.h3
-            className="w-[60%] md:w-[90%]"
+            className="w-[60%] md:w-[80%]"
             animate={{
               textShadow: isHovered ? '0 0 8px rgba(255,255,255,0.3)' : 'none',
             }}

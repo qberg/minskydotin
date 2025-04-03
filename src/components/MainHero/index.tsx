@@ -28,12 +28,15 @@ const MainHero = () => {
       <div className="absolute inset-0 -z-20">
         <CodeBackground />
       </div>
-      <motion.div style={{ scale }} className="container">
+      <motion.div
+        style={{ scale, maxHeight: '500px' }}
+        className="max-w-[2200px] flex items-center justify-center"
+      >
         <div
           className="mx-auto relative z-10 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg"
           style={{
-            width: 'clamp(20rem, 90%, 100rem)',
-            height: 'clamp(25rem, 80vh, 50rem)',
+            width: 'clamp(20rem, 90%, 108rem)',
+            height: 'clamp(25rem, 80vh, 46rem)',
             padding: 'clamp(1rem, 4vw, 3rem)',
             boxShadow:
               '0 0 20px 10px rgba(128, 128, 128, 0.3), 0 0 40px 20px rgba(128, 128, 128, 0.1)',
@@ -46,7 +49,7 @@ const MainHero = () => {
             fadeTime={1500}
           />
           <div
-            className="relative grid grid-rows-[auto_1fr_auto] h-full w-full"
+            className="relative grid grid-rows-[auto_1fr_auto] h-[90%] w-[90%] mx-auto"
             style={{ gap: 'clamp(1rem, 4vh, 2.5rem)' }}
           >
             {/* Row 1 : Heading */}

@@ -11,10 +11,4 @@ export const productsData: ProductData[] = [
       'A chatbot that seamlessly integrates with your website, understands your business, and delivers instant, accurate responses to customer queries.',
     imageSrc: '/chatpress.svg',
   },
-  {
-    name: 'Chatpress',
-    description:
-      'A chatbot that seamlessly integrates with your website, understands your business, and delivers instant, accurate responses to customer queries.',
-    imageSrc: '/chatpress.svg',
-  },
 ]

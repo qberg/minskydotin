@@ -19,7 +19,7 @@ interface InteractiveGridProps {
 }
 
 const InteractiveGrid = ({
-  cellSize = 80,
+  cellSize = 70,
   gridColor = 'rgba(128, 128, 128, 0.1)',
   highlightColor = 'rgba(1, 212, 107, 0.5)',
   trailLength = 8,

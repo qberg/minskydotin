@@ -51,8 +51,8 @@ const IconsGrid = () => {
               ${hoveredIcon === index ? 'text-glow-blue filter drop-shadow-[0_0_12px_#1D4AE4]' : 'text-secondary'}
             `}
             style={{
-              width: 'clamp(3rem, 5vw, 5.5rem)',
-              height: 'clamp(3rem, 5vw, 5.5rem)',
+              width: 'clamp(3rem, 5vw, 6rem)',
+              height: 'clamp(3rem, 5vw, 6rem)',
             }}
           />
           <span className="sr-only">{label}</span>

@@ -8,8 +8,8 @@ import ServiceCard from '@/components/ui/service-card'
 
 const animationOrder = {
   initial: 0,
-  headerStart: 0.2,
-  headerEnd: 0.35,
+  headerStart: 0.1,
+  headerEnd: 0.25,
   cardsStart: 0.25,
   cardsEnd: 0.4,
   sectionFadeOutStart: 0.65,
@@ -47,7 +47,7 @@ const Services = () => {
       style={{ opacity: sectionOpacity }}
     >
       <div
-        className="container mx-auto flex flex-col"
+        className="w-full max-w-[1760px] mx-auto flex flex-col"
         style={{ padding: 'clamp(1.5rem, 1.5vw, 2.5rem)', gap: 'clamp(1rem, 4vw, 3.5rem)' }}
       >
         <motion.h2 style={{ opacity: headerOpacity, y: headerY }}>/Our Services</motion.h2>

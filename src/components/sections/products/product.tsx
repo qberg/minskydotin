@@ -11,7 +11,7 @@ interface ProductProps {
   isMobile: boolean
 }
 
-const Product = ({ name, description, imageSrc, index, isMobile }: ProductProps) => {
+const Product = ({ name, description, imageSrc }: ProductProps) => {
   return (
     <div
       className="flex flex-col xl:flex-row xl:items-center"
