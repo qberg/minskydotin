@@ -8,7 +8,7 @@ import { motion, useMotionValueEvent, useScroll } from 'motion/react'
 
 const navItems = [
   { label: 'Home', path: '/' },
-  { label: 'Portfolio', path: '/clients' },
+  { label: 'Portfolio', path: '/portfolio' },
   { label: 'Blog', path: '/blog' },
 ]
 
