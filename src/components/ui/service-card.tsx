@@ -28,7 +28,6 @@ const ServiceCard = ({ service, index, parentScrollYProgress }: ServiceCardProps
 
   const parentOpacity = useTransform(parentScrollYProgress, [startShow, endShow], [0, 1])
 
-  // Card-specific scroll controls fine-tuned animations
   const y = useTransform(cardScrollProgress, [0, 0.4, 0.95], [60, 0, -30])
   const scale = useTransform(cardScrollProgress, [0, 0.4, 0.95], [0.8, 1, 0.9])
 
