@@ -74,22 +74,49 @@ const OurClients = () => {
       >
         <motion.h2 style={{ opacity: headerOpacity, y: headerY }}>/Our Clients</motion.h2>
         {/* Logos grid */}
-        <div
+        <motion.div
           className="w-full grid grid-cols-3 place-items-center gap-8 md:flex md:items-center md:justify-between md:gap-12"
           style={{
             height: 'clamp(6.75rem, 6.225rem + 2.625vw, 9.375rem)',
           }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+            hidden: {},
+          }}
         >
           {clientLogos.map((client, index) => (
-            <div
+            <motion.div
               key={index}
               className="relative h-full w-full"
               style={{ maxWidth: 'clamp(10.25rem, 7.3rem + 14.75vw, 25rem)' }}
+              variants={{
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    duration: 0.5,
+                    ease: 'easeOut',
+                  },
+                },
+                hidden: {
+                  opacity: 0,
+                  y: 30,
+                  scale: 0.9,
+                },
+              }}
             >
               <Image src={client.src} alt={client.alt} fill className="object-contain" />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   )
