@@ -8,14 +8,14 @@ import { useRef } from 'react'
 
 const animationOrder = {
   initial: 0,
-  headerStart: 0.2,
-  headerEnd: 0.35,
-  imageStart: 0.25,
-  imageEnd: 0.4,
-  showcaseStart: 0.35,
-  showcaseEnd: 0.45,
-  textStart: 0.4,
-  textEnd: 0.45,
+  headerStart: 0.1,
+  headerEnd: 0.25,
+  imageStart: 0.2,
+  imageEnd: 0.35,
+  showcaseStart: 0.3,
+  showcaseEnd: 0.4,
+  textStart: 0.35,
+  textEnd: 0.4,
   sectionFadeOutStart: 0.65,
   final: 0.9,
 }
