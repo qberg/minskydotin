@@ -32,7 +32,7 @@ const ServiceCard = ({ service, index, parentScrollYProgress }: ServiceCardProps
   return (
     <motion.div
       ref={cardRef}
-      className="relative bg-card-background rounded-xl overflow-hidden hover:cursor-pointer"
+      className="relative bg-card-background rounded-xl overflow-hidden"
       style={{ minHeight: 'clamp(20rem, 40vh, 35rem)', opacity: parentOpacity, y, scale }}
     >
       <DashedGridPattern topLimit="0%" bottomLimit="100%" backgroundSize="60px 60px" />
