@@ -37,7 +37,7 @@
   /* Font colors */
   --color-primary: var(--minsky-white);
   --color-secondary: var(--minsky-gray);
-  --color-teritary: var(--minsky-gray);
+  --color-teritary: var(--minsky-light-gray);
 
   /* card */
   --color-card-background: var(--minsky-dark-gray);
