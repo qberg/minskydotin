@@ -1,6 +1,5 @@
 import ProjectCard from '@/components/ui/project-card'
 import projects from '@/data/projects'
-import Image from 'next/image'
 
 const ProjectsGrid = () => {
   return (
