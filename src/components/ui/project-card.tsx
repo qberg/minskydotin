@@ -29,7 +29,6 @@ const ProjectCard = ({ name, tags, imageSrc, description }: ProjectCardProps) =>
           alt={`${name} Project Showcase Image`}
           fill
           priority
-          sizes="(max-width: 640px) 100vw, 448px"
           className="object-cover"
         />
       </div>
