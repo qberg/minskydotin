@@ -9,7 +9,7 @@ import { motion, useMotionValueEvent, useScroll } from 'motion/react'
 const navItems = [
   { label: 'Home', path: '/' },
   { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Blog', path: '/blog' },
+  { label: 'Blog', path: '/blogs' },
 ]
 
 const Navbar: React.FC = () => {
