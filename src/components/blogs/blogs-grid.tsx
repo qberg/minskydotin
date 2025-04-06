@@ -2,7 +2,7 @@
 
 import SmallBlogCard from '@/components/blogs/small-blog-card'
 import WideBlogCard from '@/components/blogs/wide-blog-card'
-import blogs from '@/data/blogs'
+import allBlogs from '@/data/blogs'
 import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 
@@ -47,7 +47,7 @@ const BlogsGrid = () => {
       <div className="w-full flex items-center justify-end">Filter</div>
 
       <div className="w-full flex flex-col items-center justify-center gap-16 xl:gap-8">
-        {blogs.map((blog, index) => (
+        {allBlogs.map((blog, index) => (
           <motion.div
             key={index}
             className="w-full"

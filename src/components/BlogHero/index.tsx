@@ -2,8 +2,15 @@ import GeometricPattern from '@/components/backgrounds/geometric-grid-pattern'
 import intentDrivenBlog from '@/data/intent-driven'
 import Image from 'next/image'
 
-const BlogHero = () => {
-  const { title, date, author, tag, imageSrc } = intentDrivenBlog
+interface BlogHeroProps {
+  title: string
+  date: string
+  author: string
+  tag: string
+  imageSrc: string
+}
+
+const BlogHero = ({ title, date, author, tag, imageSrc }: BlogHeroProps) => {
   return (
     <header className="relative">
       <GeometricPattern topLimit="5%" bottomLimit="95%" />

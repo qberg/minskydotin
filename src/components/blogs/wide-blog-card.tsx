@@ -8,11 +8,12 @@ interface WideBlogCardProps {
   tag: string
   imageSrc: string
   date: string
+  slug: string
 }
 
-const WideBlogCard = ({ title, tag, imageSrc, date }: WideBlogCardProps) => {
+const WideBlogCard = ({ title, tag, imageSrc, date, slug }: WideBlogCardProps) => {
   return (
-    <Link className="w-full" href="/intent-driven-design">
+    <Link className="w-full" href={`/blogs/${slug}`}>
       <motion.div
         className="flex items-center justify-between w-full py-4 px-2 bg-background overflow-hidden relative"
         style={{

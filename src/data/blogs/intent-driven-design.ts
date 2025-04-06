@@ -1,7 +1,7 @@
 import { BlogArticle } from '@/types/blogs'
 
 const intentDrivenBlog: BlogArticle = {
-  slug: 'intent-driven-designs',
+  slug: 'intent-driven-design',
   title: 'The future of UX: Why intent-driven design reshapes digital products',
   date: '17/03/2025',
   author: 'Shweta Senthil Kumar',

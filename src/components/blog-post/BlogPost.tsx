@@ -1,9 +1,13 @@
 import BlogFooter from '@/components/BlogFooter'
 import OtherParaBlock from '@/components/text-blocks/other-para-blocks'
 import ParaBlocks from '@/components/text-blocks/para-blocks'
-import intentDrivenBlog from '@/data/intent-driven'
+import { BlogArticle } from '@/types/blogs'
 
-const BlogPost = () => {
+interface BlogPostProps {
+  blog: BlogArticle
+}
+
+const BlogPost = ({ blog }: BlogPostProps) => {
   return (
     <main
       className="w-full max-w-[1760px] mx-auto flex items-center justify-between"
@@ -13,13 +17,17 @@ const BlogPost = () => {
 
       <main className="w-full 2xl:max-w-6xl flex flex-col gap-8 2xl:gap-16 items-center justify-center">
         <article className="w-full flex flex-col gap-8 2xl:gap-16">
-          {intentDrivenBlog.blocks.map((block, index) => (
+          {blog.blocks.map((block, index) => (
             <ParaBlocks key={index} heading={block.heading} paragraphs={block.paragraphs} />
           ))}
-          {intentDrivenBlog.otherBlock && <OtherParaBlock {...intentDrivenBlog.otherBlock} />}
+          {blog.otherBlock && <OtherParaBlock {...blog.otherBlock} />}
         </article>
 
-        <BlogFooter author={intentDrivenBlog.firstName} greeting={intentDrivenBlog.greeting} />
+        <BlogFooter
+          author={blog.firstName}
+          greeting={blog.greeting}
+          linkedInUrl={blog.linkedInUrl}
+        />
       </main>
     </main>
   )

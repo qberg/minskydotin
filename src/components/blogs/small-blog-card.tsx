@@ -6,11 +6,12 @@ interface SmallMobileCardProps {
   tag: string
   imageSrc: string
   date: string
+  slug: string
 }
 
-const SmallBlogCard = ({ title, tag, imageSrc, date }: SmallMobileCardProps) => {
+const SmallBlogCard = ({ title, tag, imageSrc, date, slug }: SmallMobileCardProps) => {
   return (
-    <Link className="w-full" href="/intent-driven-design">
+    <Link className="w-full" href={`/blogs/${slug}`}>
       <div className="flex flex-col gap-4 mx-auto">
         <div className="flex justify-between items-center">
           <p className="rounded-lg bg-matrix-green w-fit px-4 py-2 text-black">{tag}</p>
