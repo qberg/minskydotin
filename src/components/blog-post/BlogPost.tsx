@@ -1,3 +1,4 @@
+import BlogFooter from '@/components/BlogFooter'
 import OtherParaBlock from '@/components/text-blocks/other-para-blocks'
 import ParaBlocks from '@/components/text-blocks/para-blocks'
 import intentDrivenBlog from '@/data/intent-driven'
@@ -10,12 +11,16 @@ const BlogPost = () => {
     >
       <div className="hidden 2xl:block bg-red-500 w-full max-w-sm">Table of contents</div>
 
-      <article className="w-full 2xl:max-w-6xl flex flex-col gap-8 2xl:gap-16 items-center justify-center">
-        {intentDrivenBlog.blocks.map((block, index) => (
-          <ParaBlocks key={index} heading={block.heading} paragraphs={block.paragraphs} />
-        ))}
-        {intentDrivenBlog.otherBlock && <OtherParaBlock {...intentDrivenBlog.otherBlock} />}
-      </article>
+      <main className="w-full 2xl:max-w-6xl flex flex-col gap-8 2xl:gap-16 items-center justify-center">
+        <article className="w-full">
+          {intentDrivenBlog.blocks.map((block, index) => (
+            <ParaBlocks key={index} heading={block.heading} paragraphs={block.paragraphs} />
+          ))}
+          {intentDrivenBlog.otherBlock && <OtherParaBlock {...intentDrivenBlog.otherBlock} />}
+        </article>
+
+        <BlogFooter author={intentDrivenBlog.firstName} greeting={intentDrivenBlog.greeting} />
+      </main>
     </main>
   )
 }

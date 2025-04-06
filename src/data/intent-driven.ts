@@ -17,6 +17,8 @@ interface BlogArticle {
   title: string
   date: string
   author: string
+  firstName: string
+  greeting: string
   tag: string
   imageSrc: string
   blocks: Block[]
@@ -27,6 +29,9 @@ const intentDrivenBlog: BlogArticle = {
   title: 'The future of UX: Why intent-driven design reshapes digital products',
   date: '17/03/2025',
   author: 'Shwetha SenthilKumar',
+  firstName: 'Shwetha',
+  greeting:
+    "Pro tip: Ask her about her favorite font lately, the product she\'s dreaming up, or how she organizes her workspace — you\'ll instantly have her attention",
   tag: 'Design',
   imageSrc: '/intent/p1.svg',
   blocks: [
