@@ -1,5 +1,5 @@
 import ProjectCard from '@/components/ui/project-card'
-import projects from '@/data/projects'
+import allProjects from '@/data/projects/index'
 
 const ProjectsGrid = () => {
   return (
@@ -17,8 +17,8 @@ const ProjectsGrid = () => {
           gap: 'clamp(3.75rem, -1.0059rem + 19.3625vw, 14rem)',
         }}
       >
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+        {allProjects.map((project, index) => (
+          <ProjectCard key={index} {...project.card} slug={project.slug} />
         ))}
       </div>
     </section>

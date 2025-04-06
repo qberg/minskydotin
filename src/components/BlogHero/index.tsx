@@ -1,5 +1,4 @@
 import GeometricPattern from '@/components/backgrounds/geometric-grid-pattern'
-import intentDrivenBlog from '@/data/intent-driven'
 import Image from 'next/image'
 
 interface BlogHeroProps {

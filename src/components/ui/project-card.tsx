@@ -1,15 +1,18 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface ProjectCardProps {
   name: string
   tags: string[]
   imageSrc: string
   description: string
+  slug: string
 }
 
-const ProjectCard = ({ name, tags, imageSrc, description }: ProjectCardProps) => {
+const ProjectCard = ({ name, tags, imageSrc, description, slug }: ProjectCardProps) => {
   return (
-    <div
+    <Link
+      href={`/portfolio/${slug}`}
       className="flex flex-col gap-4 w-full max-w-md overflow-hidden"
       style={{
         height: 'clamp(29rem, 24.0121rem + 20.307vw, 39.75rem)',
@@ -34,7 +37,7 @@ const ProjectCard = ({ name, tags, imageSrc, description }: ProjectCardProps) =>
       </div>
 
       <p>{description}</p>
-    </div>
+    </Link>
   )
 }
 

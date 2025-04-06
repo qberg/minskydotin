@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
       onFocusCapture={() => setIsHidden(false)}
       className="top-0 left-0 sticky z-50"
     >
-      <nav className="container mx-auto px-8 py-4 flex justify-between h-[var(--navbar-height)]">
+      <nav className="w-full max-w-[1760px] mx-auto px-8 py-4 flex justify-between h-[var(--navbar-height)]">
         <Link href="/" className="flex items-center">
           <Image src="/logo.svg" alt="Minsky logo" width={80} height={40} priority />
         </Link>
