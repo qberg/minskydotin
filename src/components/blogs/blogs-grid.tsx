@@ -3,7 +3,7 @@
 import SmallBlogCard from '@/components/blogs/small-blog-card'
 import WideBlogCard from '@/components/blogs/wide-blog-card'
 import blogs from '@/data/blogs'
-import Link from 'next/link'
+import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
 
 const BlogsGrid = () => {
@@ -21,6 +21,21 @@ const BlogsGrid = () => {
     }
   }, [])
 
+  const cardVariants = {
+    out: {
+      opacity: 0,
+      y: 30,
+    },
+    in: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.5,
+      },
+    },
+  }
+
   return (
     <section
       className="flex flex-col items-center justify-center relative w-full max-w-[1760px] mx-auto"
@@ -33,9 +48,16 @@ const BlogsGrid = () => {
 
       <div className="w-full flex flex-col items-center justify-center gap-16 xl:gap-8">
         {blogs.map((blog, index) => (
-          <Link key={index} href="/" className="w-full">
+          <motion.div
+            key={index}
+            className="w-full"
+            variants={cardVariants}
+            initial="out"
+            whileInView="in"
+            viewport={{ once: true }}
+          >
             {isMobile ? <SmallBlogCard {...blog} /> : <WideBlogCard {...blog} />}
-          </Link>
+          </motion.div>
         ))}
       </div>
     </section>
