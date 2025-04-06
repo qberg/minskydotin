@@ -12,7 +12,7 @@ const BlogPost = () => {
       <div className="hidden 2xl:block bg-red-500 w-full max-w-sm">Table of contents</div>
 
       <main className="w-full 2xl:max-w-6xl flex flex-col gap-8 2xl:gap-16 items-center justify-center">
-        <article className="w-full">
+        <article className="w-full flex flex-col gap-8 2xl:gap-16">
           {intentDrivenBlog.blocks.map((block, index) => (
             <ParaBlocks key={index} heading={block.heading} paragraphs={block.paragraphs} />
           ))}
