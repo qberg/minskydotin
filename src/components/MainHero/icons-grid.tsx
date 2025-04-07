@@ -1,34 +1,15 @@
 'use client'
-import { useState } from 'react'
 import SketchAnimation from '../sketch-animations'
 import Image from 'next/image'
-import {
-  Lightbulb,
-  FileText,
-  Settings,
-  Network,
-  Code,
-  Database,
-  Globe,
-  TimerOff,
-} from 'lucide-react'
+import { type IconComponent } from '@/data/main-hero/icons'
 
-// Map of icons with their corresponding Lucide components
-const iconComponents = [
-  { Icon: '/hero/bulb.svg', LucideIcon: Lightbulb, label: 'Ideas' },
-  { Icon: '/hero/content.svg', LucideIcon: FileText, label: 'Documentation' },
-  { Icon: '/hero/research.svg', LucideIcon: Settings, label: 'Configuration' },
-  { Icon: '/hero/figma.svg', LucideIcon: Network, label: 'Networking' },
-  { Icon: '/hero/minsky.svg', LucideIcon: Code, label: 'Development' },
-  { Icon: '/hero/code.svg', LucideIcon: Database, label: 'Database' },
-  { Icon: '/hero/research.svg', LucideIcon: Settings, label: 'Web' },
-  { Icon: '/hero/globe.svg', LucideIcon: Globe, label: 'Scheduling' },
-  { Icon: '/hero/analytics.svg', LucideIcon: TimerOff, label: 'Performance' },
-]
+interface IconsGridProps {
+  icons: IconComponent[]
+  hoveredIcon: number | null
+  setHoveredIcon: (index: number | null) => void
+}
 
-const IconsGrid = () => {
-  const [hoveredIcon, setHoveredIcon] = useState<number | null>(null)
-
+const IconsGrid = ({ icons, hoveredIcon, setHoveredIcon }: IconsGridProps) => {
   return (
     <div
       className="col-span-9 w-full grid grid-cols-3 lg:grid-cols-9 xl:grid-cols-9"
@@ -36,7 +17,7 @@ const IconsGrid = () => {
         gap: 'clamp(0.5rem, 2vw, 1.5rem)',
       }}
     >
-      {iconComponents.map(({ Icon, LucideIcon, label }, index) => (
+      {icons.map(({ Icon, LucideIcon, label }, index) => (
         <div
           key={index}
           className="flex items-center justify-center sm:justify-start transition-all hover:cursor-pointer group relative"
@@ -86,7 +67,6 @@ const IconsGrid = () => {
                   description="We provide hosting and maintenance"
                 />
               </div>
-              <div className="absolute xl:hidden">Text</div>
             </>
           )}
 

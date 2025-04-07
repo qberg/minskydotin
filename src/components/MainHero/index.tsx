@@ -5,10 +5,13 @@ import { motion, useScroll, useTransform } from 'motion/react'
 import InteractiveGrid from '../backgrounds/interactive-grid'
 import CodeBackground from './code-background'
 import IconsGrid from './icons-grid'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import ShweayButton from '../ui/shweay-button'
+import { iconComponents } from '@/data/main-hero/icons'
 
 const MainHero = () => {
+  const [hoveredIcon, setHoveredIcon] = useState<number | null>(null)
+
   const heroRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({
@@ -23,16 +26,11 @@ const MainHero = () => {
     <motion.section
       style={{ opacity: opacity }}
       ref={heroRef}
-      className="relative h-full min-h-[calc(100vh-var(--navbar-height))] md:flex md:items-center md:justify-center"
+      className="relative h-full min-h-[calc(100vh-var(--navbar-height))] sm:flex items-center justify-center"
     >
       <div className="absolute inset-0 -z-20">
         <CodeBackground />
       </div>
-      {/*container for the monitor like thingy*/}
-      {/* Montior: clamp(44.125rem, 39.1385rem + 20.3012vw, 63.5rem) clamp(39.5rem, 37.7628rem + 7.0727vw, 46.25rem)
-
-          height: 'min(calc(80vh), clamp(44.125rem, 39.1385rem + 20.3012vw, 63.5rem))',
-      */}
       <motion.div
         className="max-w-[1760px] h-full flex items-center justify-center"
         style={{
@@ -69,14 +67,31 @@ const MainHero = () => {
 
             {/* Row 2: Icons Grid */}
             <div className="grid grid-cols-9 z-20">
-              <IconsGrid />
+              <IconsGrid
+                icons={iconComponents}
+                hoveredIcon={hoveredIcon}
+                setHoveredIcon={setHoveredIcon}
+              />
             </div>
 
             {/* Row 3: Button*/}
             <div className="grid grid-cols-9">
               <div className="col-span-9 flex items-center justify-end z-20">
-                {' '}
+                {hoveredIcon !== null && (
+                  <div className="xl:hidden flex flex-col">
+                    <h5>[{iconComponents[hoveredIcon].label}]</h5>
+                    <p
+                      className="w-full"
+                      style={{
+                        maxWidth: 'clamp(7.5rem, 4.177rem + 13.5287vw, 15rem)',
+                      }}
+                    >
+                      {iconComponents[hoveredIcon].desc}
+                    </p>
+                  </div>
+                )}
                 <div
+                  className="ml-auto"
                   style={{
                     width: 'clamp(108px, 15vw, 180px)',
                     height: 'clamp(40px, 6vw, 72px)',
@@ -94,3 +109,13 @@ const MainHero = () => {
 }
 
 export default MainHero
+
+{
+  /*container for the monitor like thingy*/
+}
+{
+  /* Montior: clamp(44.125rem, 39.1385rem + 20.3012vw, 63.5rem) clamp(39.5rem, 37.7628rem + 7.0727vw, 46.25rem)
+
+          height: 'min(calc(80vh), clamp(44.125rem, 39.1385rem + 20.3012vw, 63.5rem))',
+      */
+}
