@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useRef, useState } from 'react'
 import { motion, useMotionValueEvent, useScroll } from 'motion/react'
+import NavMenu from '@/components/NavMenu'
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -36,7 +37,7 @@ const Navbar: React.FC = () => {
       onFocusCapture={() => setIsHidden(false)}
       className="top-0 left-0 sticky z-50"
     >
-      <nav className="w-full max-w-[1760px] mx-auto px-8 py-4 flex justify-between h-[var(--navbar-height)]">
+      <nav className="w-full max-w-[1760px] mx-auto px-8 py-4 flex justify-between items-center h-[var(--navbar-height)]">
         <Link href="/" className="flex items-center">
           <Image src="/logo.svg" alt="Minsky logo" width={80} height={40} priority />
         </Link>
@@ -60,23 +61,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Nav */}
-        <button className="sm:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <line x1="4" x2="20" y1="12" y2="12"></line>
-            <line x1="4" x2="20" y1="6" y2="6"></line>
-            <line x1="4" x2="20" y1="18" y2="18"></line>
-          </svg>
-        </button>
+        <NavMenu />
       </nav>
     </motion.header>
   )
