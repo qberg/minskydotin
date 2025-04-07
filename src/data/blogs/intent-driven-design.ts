@@ -8,7 +8,7 @@ const intentDrivenBlog: BlogArticle = {
   firstName: 'Shweta',
   linkedInUrl: 'https://in.linkedin.com/in/shwetasenthilkumar',
   greeting:
-    "Pro tip: Ask her about her favorite font lately, the product she\'s dreaming up, or how she organizes her workspace — you\'ll instantly have her attention",
+    "Pro tip: Ask her about her favorite font lately, the product she\'s dreaming up, or how she organizes her workfiles — you\'ll instantly have her attention",
   tag: 'Design',
   imageSrc: '/intent/p1.svg',
   blocks: [
