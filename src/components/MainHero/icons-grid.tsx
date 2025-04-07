@@ -1,7 +1,7 @@
 'use client'
-import SketchAnimation from '../sketch-animations'
 import Image from 'next/image'
-import { type IconComponent } from '@/data/main-hero/icons'
+import { iconComponents, type IconComponent } from '@/data/main-hero/icons'
+import { BottomRightAnim, TopLeftAnim, TopRightAnim } from '@/components/sketch-animations/new'
 
 interface IconsGridProps {
   icons: IconComponent[]
@@ -49,7 +49,7 @@ const IconsGrid = ({ icons, hoveredIcon, setHoveredIcon }: IconsGridProps) => {
 
           {/* Lucide icon (shown when hovered) */}
           {hoveredIcon === index && (
-            <>
+            <div className="relative">
               <LucideIcon
                 aria-hidden={true}
                 className="text-primary transition-all duration-300 filter drop-shadow-[0_0_12px_#1D4AE4] stroke-blue-500"
@@ -59,15 +59,30 @@ const IconsGrid = ({ icons, hoveredIcon, setHoveredIcon }: IconsGridProps) => {
                 }}
               />
 
-              {/* SketchAnimation that appears on hover */}
               <div className="relative hidden xl:block">
-                <SketchAnimation
+                {/*<SketchAnimation
                   direction={index < 5 ? 'bottomRight' : index === 8 ? 'topLeft' : 'topRight'}
-                  title="[Server]"
-                  description="We provide hosting and maintenance"
-                />
+                  title={`[${iconComponents[hoveredIcon].label}]`}
+                  description={iconComponents[hoveredIcon].desc}
+                />*/}
+                {index < 5 ? (
+                  <BottomRightAnim
+                    title={`[${iconComponents[hoveredIcon].label}]`}
+                    description={iconComponents[hoveredIcon].desc}
+                  />
+                ) : index === 8 ? (
+                  <TopLeftAnim
+                    title={`[${iconComponents[hoveredIcon].label}]`}
+                    description={iconComponents[hoveredIcon].desc}
+                  />
+                ) : (
+                  <TopRightAnim
+                    title={`[${iconComponents[hoveredIcon].label}]`}
+                    description={iconComponents[hoveredIcon].desc}
+                  />
+                )}
               </div>
-            </>
+            </div>
           )}
 
           <span className="sr-only">{label}</span>

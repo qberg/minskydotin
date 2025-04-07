@@ -25,7 +25,7 @@ export const sketchAnimationSVG: Record<string, SketachAnimationSVG> = {
       viewBox: '0 0 119 113',
       fill: 'none',
       xmlns: 'http://www.w3.org/2000/svg',
-      className: 'absolute -top-40 -left-16 translate-x-4',
+      className: '',
     },
     paths: [
       {
@@ -55,7 +55,7 @@ export const sketchAnimationSVG: Record<string, SketachAnimationSVG> = {
       viewBox: '0 0 143 139',
       fill: 'none',
       xmlns: 'http://www.w3.org/2000/svg',
-      className: 'absolute top-14 -left-14 -translate-x-4',
+      className: '',
     },
     paths: [
       {
@@ -84,7 +84,7 @@ export const sketchAnimationSVG: Record<string, SketachAnimationSVG> = {
       viewBox: '0 0 119 113',
       fill: 'none',
       xmlns: 'http://www.w3.org/2000/svg',
-      className: 'absolute -top-40 -left-37 -translate-x-4',
+      className: '',
     },
     paths: [
       {

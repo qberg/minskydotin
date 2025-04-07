@@ -16,7 +16,7 @@ const SketchAnimation = ({ direction, title, description }: SketchAnimationProps
   const sketch = sketchAnimationSVG[direction]
 
   return (
-    <React.Fragment>
+    <div className="">
       <svg {...sketch.svgProps}>
         {sketch.paths.map((path, index) => (
           <motion.path
@@ -42,7 +42,7 @@ const SketchAnimation = ({ direction, title, description }: SketchAnimationProps
         ))}
       </svg>
       <TextAnim direction={direction} title={title} description={description} />
-    </React.Fragment>
+    </div>
   )
 }
 
