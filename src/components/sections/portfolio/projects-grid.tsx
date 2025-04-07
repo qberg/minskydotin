@@ -14,7 +14,7 @@ const ProjectsGrid = () => {
       <div
         className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
         style={{
-          gap: 'clamp(3.75rem, -1.0059rem + 19.3625vw, 14rem)',
+          gap: 'clamp(4rem, -16rem + 25vw, 14rem)',
         }}
       >
         {allProjects.map((project, index) => (
