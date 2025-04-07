@@ -1,4 +1,3 @@
-'use client'
 import { motion } from 'motion/react'
 
 interface TextAnimProps {
@@ -7,10 +6,26 @@ interface TextAnimProps {
   description: string
 }
 
+// Position classes for different screen sizes using Tailwind's responsive utilities
 const classMap: Record<string, string> = {
-  topRight: 'absolute -top-40 -left-16 translate-x-32',
-  bottomRight: 'absolute top-38 -left-18 translate-x-28',
-  topLeft: 'absolute -top-40 -left-36 -translate-x-18',
+  topRight: 'absolute -top-18 -right-60 transform -translate-y-full lg:translate-x-1/2',
+  bottomRight:
+    'absolute top-29 -right-55 transform translate-y-1/2 translate-x-1/4 lg:translate-x-1/2',
+  topLeft:
+    'absolute -top-18 -left-25 transform -translate-y-full -translate-x-1/4 lg:-translate-x-1/2',
+}
+
+const textContainerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 1.2,
+    },
+  },
 }
 
 const titleVariants = {
@@ -24,7 +39,6 @@ const titleVariants = {
     transition: {
       duration: 0.6,
       ease: [0.22, 1, 0.36, 1],
-      delay: 1.2,
     },
   },
 }
@@ -35,36 +49,33 @@ const descriptionVariants = {
     y: 8,
   },
   visible: {
-    opacity: 0,
+    opacity: 1, // Fixed this from 0 to 1
     y: 0,
     transition: {
       duration: 0.6,
       ease: [0.22, 1, 0.36, 1],
-      delay: 1.0,
     },
   },
 }
 
 const TextAnim = ({ direction, title, description }: TextAnimProps) => {
   return (
-    <div className={classMap[direction]}>
-      <motion.div
-        variants={titleVariants}
-        initial="hidden"
-        animate="visible"
-        className="font-bold text-primary"
-      >
+    <motion.div
+      className={`${classMap[direction]} text-left w-xs pointer-events-none z-10`}
+      variants={textContainerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.h5 variants={titleVariants} className={`font-bold`}>
         {title}
-      </motion.div>
-      <motion.div
-        variants={titleVariants}
-        initial="hidden"
-        animate="visible"
-        className="text-sm mt-1 text-primary"
+      </motion.h5>
+      <motion.p
+        variants={descriptionVariants}
+        className={` w-full pl-1 mt-1 tracking-tight leading-tight`}
       >
         {description}
-      </motion.div>
-    </div>
+      </motion.p>
+    </motion.div>
   )
 }
 

@@ -24,7 +24,7 @@ const icdic: Project = {
     },
     techStack: {
       name: 'Tech Stack',
-      tags: ['Nextjs', 'Tailwind', 'Payload CMS'],
+      tags: ['Nextjs', 'Payload CMS'],
     },
   },
   overview: {

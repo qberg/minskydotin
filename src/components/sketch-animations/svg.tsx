@@ -84,7 +84,7 @@ export const sketchAnimationSVG: Record<string, SketachAnimationSVG> = {
       viewBox: '0 0 119 113',
       fill: 'none',
       xmlns: 'http://www.w3.org/2000/svg',
-      className: 'absolute -top-40 -left-34 -translate-x-4',
+      className: 'absolute -top-40 -left-37 -translate-x-4',
     },
     paths: [
       {

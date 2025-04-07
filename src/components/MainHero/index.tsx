@@ -59,7 +59,7 @@ const MainHero = () => {
           >
             {/* Row 1 : Heading */}
             <div className="grid grid-cols-4">
-              <h1 className="col-span-4 md:col-span-4 lg:col-span-3 xl:col-span-2 2xl:col-span-2">
+              <h1 className="col-span-4 md:col-span-4 lg:col-span-3 xl:col-span-2 2xl:col-span-2 3xl:col-span-3">
                 <span className="text-secondary">We Design, Develop, & Deploy</span>
                 <span className="text-primary"> Websites.</span>
               </h1>
