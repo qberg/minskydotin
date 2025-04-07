@@ -58,8 +58,8 @@ const MainHero = () => {
             style={{ gap: 'clamp(1rem, 4vh, 2.5rem)' }}
           >
             {/* Row 1 : Heading */}
-            <div className="grid grid-cols-9">
-              <h1 className="col-span-9 md:col-span-7 lg:col-span-7 xl:col-span-7 2xl:col-span-5 -z-10">
+            <div className="grid grid-cols-4">
+              <h1 className="col-span-4 md:col-span-4 lg:col-span-3 xl:col-span-2 2xl:col-span-2">
                 <span className="text-secondary">We Design, Develop, & Deploy</span>
                 <span className="text-primary"> Websites.</span>
               </h1>
