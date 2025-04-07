@@ -23,20 +23,27 @@ const MainHero = () => {
     <motion.section
       style={{ opacity: opacity }}
       ref={heroRef}
-      className="relative min-h-[calc(100vh-var(--navbar-height))] flex items-center justify-center"
+      className="relative h-full min-h-[calc(100vh-var(--navbar-height))] md:flex md:items-center md:justify-center"
     >
       <div className="absolute inset-0 -z-20">
         <CodeBackground />
       </div>
+      {/*container for the monitor like thingy*/}
+      {/* Montior: clamp(44.125rem, 39.1385rem + 20.3012vw, 63.5rem) clamp(39.5rem, 37.7628rem + 7.0727vw, 46.25rem)
+
+          height: 'min(calc(80vh), clamp(44.125rem, 39.1385rem + 20.3012vw, 63.5rem))',
+      */}
       <motion.div
-        style={{ scale, maxHeight: '500px' }}
-        className="max-w-[2200px] flex items-center justify-center"
+        className="max-w-[1760px] h-full flex items-center justify-center"
+        style={{
+          scale,
+        }}
       >
+        {/* monitor thingy */}
         <div
-          className="mx-auto relative z-10 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg"
+          className="mx-auto w-[95%] h-[95%] relative z-10 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg overflow-hidden flex items-center justify-center"
           style={{
-            width: 'clamp(20rem, 90%, 108rem)',
-            height: 'clamp(25rem, 80vh, 46rem)',
+            height: 'clamp(39.5rem, 37.7628rem + 7.0727vw, 46.25rem)',
             padding: 'clamp(1rem, 4vw, 3rem)',
             boxShadow:
               '0 0 20px 10px rgba(128, 128, 128, 0.3), 0 0 40px 20px rgba(128, 128, 128, 0.1)',
@@ -67,7 +74,7 @@ const MainHero = () => {
 
             {/* Row 3: Button*/}
             <div className="grid grid-cols-9">
-              <div className="col-span-9 flex items-center justify-end pr-4 z-20">
+              <div className="col-span-9 flex items-center justify-end z-20">
                 {' '}
                 <div
                   style={{
