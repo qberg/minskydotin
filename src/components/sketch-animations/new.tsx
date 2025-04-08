@@ -94,7 +94,7 @@ export const TopRightAnim = ({ title, description }: ArrowAnimProps) => (
     hoverTextProps={{
       title,
       description,
-      className: 'text-left -mt-1',
+      className: 'text-left -mt-1 w-xs',
     }}
     textPosition="after"
   />
@@ -107,7 +107,7 @@ export const BottomRightAnim = ({ title, description }: ArrowAnimProps) => (
     hoverTextProps={{
       title,
       description,
-      className: 'text-left mt-[104px] -ml-4',
+      className: 'text-left mt-[104px] -ml-4 w-xs',
     }}
     textPosition="after"
   />
