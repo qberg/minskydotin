@@ -5,7 +5,7 @@ const tngss: Project = {
   card: {
     name: 'TNGSS',
     tags: ['Web App', 'Mobile App'],
-    imageSrc: '/pf1.svg',
+    imageSrc: '/coord/im3.png',
     description:
       'Expert of the work goes here: Lorem ipsum odor amet, consectetuer adipiscing elit. Magna hendrerit cursus',
   },

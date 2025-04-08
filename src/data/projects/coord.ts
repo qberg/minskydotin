@@ -5,13 +5,13 @@ const coord: Project = {
   card: {
     name: 'COORD',
     tags: ['Website', 'CRM'],
-    imageSrc: '/pf1.svg',
+    imageSrc: '/coord/im2.png',
     description:
       'Expert of the work goes here: Lorem ipsum odor amet, consectetuer adipiscing elit. Magna hendrerit cursus',
   },
   hero: {
     title: 'A  dynamic website and a simple CRM for a craft community platform',
-    imageSrc: '/pf1.svg',
+    imageSrc: '/coord/im2.png',
     client: {
       name: 'Client',
       tags: ['COORD'],

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import BlurImage from '@/components/BlurImage'
 import Link from 'next/link'
 
 interface ProjectCardProps {
@@ -9,7 +9,7 @@ interface ProjectCardProps {
   slug: string
 }
 
-const ProjectCard = ({ name, tags, imageSrc, description, slug }: ProjectCardProps) => {
+const ProjectCard = async ({ name, tags, imageSrc, description, slug }: ProjectCardProps) => {
   return (
     <Link
       href={`/portfolio/${slug}`}
@@ -27,12 +27,13 @@ const ProjectCard = ({ name, tags, imageSrc, description, slug }: ProjectCardPro
         className="relative rounded-xl w-full mx-auto overflow-hidden"
         style={{ height: 'clamp(23rem, 19.8101rem + 12.987vw, 29.875rem)' }}
       >
-        <Image
+        <BlurImage
           src={imageSrc}
           alt={`${name} Project Showcase Image`}
           fill
           priority
           className="object-cover"
+          sizes="30vw"
         />
       </div>
 

@@ -5,7 +5,7 @@ const icdic: Project = {
   card: {
     name: 'ICDIC',
     tags: ['Website'],
-    imageSrc: '/pf2.svg',
+    imageSrc: '/icdic/cover.png',
     description:
       'Expert of the work goes here: Lorem ipsum odor amet, consectetuer adipiscing elit. Magna hendrerit cursus',
   },

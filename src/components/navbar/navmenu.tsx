@@ -1,10 +1,10 @@
 'use client'
 
 import NavButton from '@/components/navbar/navbutton'
+import TransitionLink from '@/components/TransitionLink'
 import { navItems } from '@/data/navbar'
 import { AnimatePresence, motion } from 'motion/react'
 
-import Link from 'next/link'
 import React, { useState } from 'react'
 
 const NavMenu = () => {
@@ -24,7 +24,7 @@ const NavMenu = () => {
             <ul className="flex flex-col gap-2 flex-1">
               {navItems.map((item, index) => (
                 <li key={index}>
-                  <Link href={item.path}>{item.label}</Link>
+                  <TransitionLink href={item.path}>{item.label}</TransitionLink>
                 </li>
               ))}
             </ul>
