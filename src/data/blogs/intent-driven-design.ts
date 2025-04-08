@@ -11,15 +11,12 @@ const intentDrivenBlog: BlogArticle = {
     "Pro tip: Ask her about her favorite font lately, the product she\'s dreaming up, or how she organizes her workfiles — you\'ll instantly have her attention",
   tag: 'Design',
   imageSrc: '/intent/p1.svg',
-  blocks: [
-    {
-      heading: '',
-      paragraphs: [
-        'Most users don\'t follow a predefined path when navigating a website or using a mobile app. Instead, they have intent. Whether searching for "black sneakers" or a specific SAAS feature, they expect the experience to adapt to their needs in real time.',
+  paragraphs: [
+    'Most users don\'t follow a predefined path when navigating a website or using a mobile app. Instead, they have intent. Whether searching for "black sneakers" or a specific SAAS feature, they expect the experience to adapt to their needs in real time.',
 
-        'How often do users follow "Men\'s Shoes" → "Sneakers" → "Nike"? Not often. Instead, most users head directly to the search bar and type "Nike Black Sneakers." At that moment, the user\'s intent is clear. When the user knows exactly what they want, and the site doesn\'t deliver that, the user experience suffers. At times like this, a goal-based interaction- where users are taken through specific steps- might not cut it anymore.',
-      ],
-    },
+    'How often do users follow "Men\'s Shoes" → "Sneakers" → "Nike"? Not often. Instead, most users head directly to the search bar and type "Nike Black Sneakers." At that moment, the user\'s intent is clear. When the user knows exactly what they want, and the site doesn\'t deliver that, the user experience suffers. At times like this, a goal-based interaction- where users are taken through specific steps- might not cut it anymore.',
+  ],
+  blocks: [
     {
       heading: 'The Shift to Intent-Driven UX',
       paragraphs: [

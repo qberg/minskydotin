@@ -23,6 +23,7 @@ export interface BlogArticle {
   greeting: string
   tag: string
   imageSrc: string
+  paragraphs: string[]
   blocks: Block[]
   otherBlock: OtherBlock
 }
