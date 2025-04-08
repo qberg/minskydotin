@@ -4,16 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useRef, useState } from 'react'
+import { useTransitionRouter } from 'next-view-transitions'
 import { motion, useMotionValueEvent, useScroll } from 'motion/react'
-import NavMenu from '@/components/NavMenu'
 
-const navItems = [
-  { label: 'Home', path: '/' },
-  { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Blog', path: '/blogs' },
-]
+import NavMenu from '@/components/navbar/navmenu'
+import { navItems } from '@/data/navbar'
 
 const Navbar: React.FC = () => {
+  const router = useTransitionRouter()
   const pathname = usePathname()
   const [isHidden, setIsHidden] = useState(false)
   const { scrollY } = useScroll()
@@ -53,6 +51,12 @@ const Navbar: React.FC = () => {
                     ? 'bg-background text-primary'
                     : 'text-teritary hover:bg-background/50 hover:text-primary/65'
                 }`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  router.push(item.path, {
+                    onTransitionReady: pageAnimation,
+                  })
+                }}
               >
                 {item.label}
               </Link>
@@ -64,6 +68,46 @@ const Navbar: React.FC = () => {
         <NavMenu />
       </nav>
     </motion.header>
+  )
+}
+
+const pageAnimation = () => {
+  document.documentElement.animate(
+    [
+      {
+        opacity: 1,
+        scale: 1,
+        transform: 'translateY(0)',
+      },
+      {
+        opacity: 0.1,
+        scale: 0.9,
+        transform: 'translateY(-100px)',
+      },
+    ],
+    {
+      duration: 1000,
+      easing: 'cubic-bezier(0.76, 0, 0.24, 1)',
+      fill: 'forwards',
+      pseudoElement: '::view-transition-old(root)',
+    },
+  )
+
+  document.documentElement.animate(
+    [
+      {
+        transform: 'translateY(100%)',
+      },
+      {
+        transform: 'translateY(0)',
+      },
+    ],
+    {
+      duration: 1000,
+      easing: 'cubic-bezier(0.76, 0, 0.24, 1)',
+      fill: 'forwards',
+      pseudoElement: '::view-transition-new(root)',
+    },
   )
 }
 

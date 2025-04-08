@@ -1,14 +1,9 @@
 'use client'
 
+import NavButton from '@/components/navbar/navbutton'
+import { navItems } from '@/data/navbar'
 import { AnimatePresence, motion } from 'motion/react'
 
-const navItems = [
-  { label: 'Home', path: '/' },
-  { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Blog', path: '/blogs' },
-]
-
-import NavButton from '@/components/NavButton'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
