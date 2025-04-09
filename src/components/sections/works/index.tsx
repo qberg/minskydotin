@@ -1,9 +1,9 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
-import WorkCard from '@/components/ui/work-card'
 import { workData } from '@/data/works-data'
 import TransitionLink from '@/components/TransitionLink'
+import WorkCard from '@/components/ui/work-card'
 
 const animationOrder = {
   initial: 0,
@@ -18,7 +18,7 @@ const containerVariants = {
   visible: {
     transition: {
       staggerChildren: 0.15,
-      delayChildren: 0.3, // Delay children to ensure header appears first
+      delayChildren: 0.3,
     },
   },
 }
@@ -125,6 +125,22 @@ const Works = () => {
       </motion.div>
     </motion.section>
   )
+}
+
+{
+  /*interface WorkCardProps {
+  work: WorkData
+  isHovered: boolean
+}
+
+const WorkCard = ({ work,isHovered }: WorkCardProps) => {
+  return (
+    <div className=''>
+      <h3>{work.clientName}</h3>
+    </div>
+  )
+}
+*/
 }
 
 export default Works

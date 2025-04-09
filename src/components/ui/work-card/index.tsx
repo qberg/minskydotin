@@ -1,9 +1,10 @@
 import Link from 'next/link'
-import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
+import { motion } from 'motion/react'
 
 import { WorkData } from '@/data/works-data'
 import { CircleArrowOutUpRight } from 'lucide-react'
 import React, { useRef } from 'react'
+import ScrollShowcase from '@/components/ui/work-card/scroll-showcase'
 
 interface WorkCardProps {
   work: WorkData
@@ -22,35 +23,8 @@ const WorkCard = ({
   isHovered,
   isMobile,
 }: WorkCardProps) => {
-  const imageSrc = work.images[0]
-
   const targetRef = useRef<HTMLDivElement | null>(null)
   const animationState = isHovered ? 'hover' : 'initial'
-
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-  const mouseXSpring = useSpring(x)
-  const mouseYSpring = useSpring(y)
-
-  const imgTop = useTransform(mouseYSpring, [0.5, -0.5], ['40%', '60%'])
-  const imgLeft = useTransform(mouseXSpring, [0.5, -0.5], ['60%', '70%'])
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    if (!targetRef.current) return
-
-    const rect = targetRef.current.getBoundingClientRect()
-    const width = rect.width
-    const height = rect.height
-
-    const mouseX = e.clientX - rect.left
-    const mouseY = e.clientY - rect.top
-
-    const xPct = mouseX / width - 0.5
-    const yPct = mouseY / height - 0.5
-
-    x.set(xPct)
-    y.set(yPct)
-  }
 
   const variants = {
     container: {},
@@ -93,34 +67,14 @@ const WorkCard = ({
       <motion.div
         ref={targetRef}
         style={{ minHeight: 'clamp(7rem, 8vh, 11rem)' }}
-        className={` relative border-b border-widecard-border py-8 px-0 xl:py-8 xl:pl-12 overflow-hidden ${isHovered ? 'rounded-xl cursor-pointer border' : ''}`}
+        className={` relative border-b border-widecard-border overflow-hidden flex w-full  ${isHovered ? 'rounded-xl cursor-pointer border' : ''}`}
         variants={variants.container}
         initial="initial"
         animate={animationState}
         onMouseEnter={() => handleMouseEnter(index)}
         onMouseLeave={handleMouseLeave}
-        onMouseMove={handleMouseMove}
       >
-        {imageSrc && (
-          <motion.img
-            src={imageSrc}
-            alt={`${work.clientName} project`}
-            className="absolute z-0 rounded-lg object-cover h-32 w-40 md:h-48 md:w-64"
-            style={{
-              top: imgTop,
-              left: imgLeft,
-              translateX: '10%',
-              translateY: '-50%',
-              position: 'absolute',
-              zIndex: 0,
-              opacity: 0.7,
-            }}
-            variants={variants.image}
-            animate={animationState}
-            transition={transitions.image}
-          />
-        )}
-        <div className="flex items-center justify-between w-[60%] overflow-hidden">
+        <div className="flex items-center justify-between overflow-hidden grow-1 max-w-4xl xl:pl-10">
           {/* Client name */}
           <motion.div
             className="flex flex-col justify-start items-start"
@@ -168,9 +122,41 @@ const WorkCard = ({
           )}
           {/* Images show case */}
         </div>
+
+        {!isMobile && (
+          <div className="ml-auto">
+            <ScrollShowcase work={work} index={index} isHovered={isHovered} isMobile={isMobile} />
+          </div>
+        )}
       </motion.div>
     </Link>
   )
 }
 
 export default WorkCard
+
+{
+  /*
+
+        {false && (
+          <motion.img
+            src={imageSrc}
+            alt={`${work.clientName} project`}
+            className="absolute z-0 rounded-lg object-cover h-32 w-40 md:h-48 md:w-64"
+            style={{
+              top: imgTop,
+              left: imgLeft,
+              translateX: '10%',
+              translateY: '-50%',
+              position: 'absolute',
+              zIndex: 0,
+              opacity: 0.7,
+            }}
+            variants={variants.image}
+            animate={animationState}
+            transition={transitions.image}
+          />
+        )}
+
+*/
+}

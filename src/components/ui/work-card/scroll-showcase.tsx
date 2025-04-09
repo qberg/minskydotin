@@ -12,7 +12,10 @@ interface ScrollShowcaseProps {
 }
 
 const ScrollShowcase = ({ work, index, isHovered, isMobile }: ScrollShowcaseProps) => {
-  const controls = useAnimation()
+  // Create separate animation controls for each column
+  const controlsCol1 = useAnimation()
+  const controlsCol2 = useAnimation()
+  const controlsCol3 = useAnimation()
 
   const ensureEnoughImages = () => {
     const minImagesNeeded = 9
@@ -33,23 +36,54 @@ const ScrollShowcase = ({ work, index, isHovered, isMobile }: ScrollShowcaseProp
 
   useEffect(() => {
     const shouldScroll = !isMobile || isHovered
+
     if (shouldScroll) {
-      controls.start({
-        y: [0, -500], // Increased scrolling range for larger images
+      // Different speeds for each column
+      controlsCol1.start({
+        y: [0, -500],
         transition: {
           y: {
             repeat: Infinity,
             repeatType: 'loop',
-            duration: 15, // Slightly slower for better visibility of larger images
+            duration: 15, // Base speed
+            ease: 'linear',
+          },
+        },
+      })
+
+      controlsCol2.start({
+        y: [0, -500],
+        transition: {
+          y: {
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 18, // Slower
+            ease: 'linear',
+          },
+        },
+      })
+
+      controlsCol3.start({
+        y: [0, -500],
+        transition: {
+          y: {
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 12, // Faster
             ease: 'linear',
           },
         },
       })
     } else {
-      controls.stop()
-      controls.set({ y: 0 })
+      // Stop all animations when not scrolling
+      controlsCol1.stop()
+      controlsCol1.set({ y: 0 })
+      controlsCol2.stop()
+      controlsCol2.set({ y: 0 })
+      controlsCol3.stop()
+      controlsCol3.set({ y: 0 })
     }
-  }, [isHovered, isMobile, controls])
+  }, [isHovered, isMobile, controlsCol1, controlsCol2, controlsCol3])
 
   const shouldShow = isMobile || isHovered
 
@@ -69,37 +103,83 @@ const ScrollShowcase = ({ work, index, isHovered, isMobile }: ScrollShowcaseProp
       <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none opacity-40"></div>
       <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none opacity-40"></div>
 
-      {columns.map((column, colIndex) => (
-        <motion.div
-          key={colIndex}
-          className="flex-1 flex flex-col gap-4" // Increased gap between images
-          animate={controls}
-          initial={{ y: 0 }}
-        >
-          {[...column, ...column].map((imgSrc, imgIndex) => (
-            <motion.div
-              key={imgIndex}
-              className="relative flex-shrink-0"
-              style={{
-                height: 'clamp(10rem, 14vh, 20rem)', // Doubled height
-                width: '100%',
-              }}
-              initial={{ scale: 0.98 }}
-              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-            >
-              <div className="relative w-full h-full rounded overflow-hidden">
-                <Image
-                  src={imgSrc}
-                  alt={`${work.clientName} image ${imgIndex}`}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  className="shadow-sm"
-                />
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      ))}
+      {/* Column 1 - Base speed */}
+      <motion.div className="flex-1 flex flex-col gap-4" animate={controlsCol1} initial={{ y: 0 }}>
+        {[...columns[0], ...columns[0]].map((imgSrc, imgIndex) => (
+          <motion.div
+            key={imgIndex}
+            className="relative flex-shrink-0"
+            style={{
+              height: 'clamp(10rem, 14vh, 20rem)',
+              width: '100%',
+            }}
+            initial={{ scale: 0.98 }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+          >
+            <div className="relative w-full h-full rounded overflow-hidden">
+              <Image
+                src={imgSrc}
+                alt={`${work.clientName} image ${imgIndex}`}
+                fill
+                style={{ objectFit: 'cover' }}
+                className="shadow-sm"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Column 2 - Slower speed */}
+      <motion.div className="flex-1 flex flex-col gap-4" animate={controlsCol2} initial={{ y: 0 }}>
+        {[...columns[1], ...columns[1]].map((imgSrc, imgIndex) => (
+          <motion.div
+            key={imgIndex}
+            className="relative flex-shrink-0"
+            style={{
+              height: 'clamp(10rem, 14vh, 20rem)',
+              width: '100%',
+            }}
+            initial={{ scale: 0.98 }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+          >
+            <div className="relative w-full h-full rounded overflow-hidden">
+              <Image
+                src={imgSrc}
+                alt={`${work.clientName} image ${imgIndex}`}
+                fill
+                style={{ objectFit: 'cover' }}
+                className="shadow-sm"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Column 3 - Faster speed */}
+      <motion.div className="flex-1 flex flex-col gap-4" animate={controlsCol3} initial={{ y: 0 }}>
+        {[...columns[2], ...columns[2]].map((imgSrc, imgIndex) => (
+          <motion.div
+            key={imgIndex}
+            className="relative flex-shrink-0"
+            style={{
+              height: 'clamp(10rem, 14vh, 20rem)',
+              width: '100%',
+            }}
+            initial={{ scale: 0.98 }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+          >
+            <div className="relative w-full h-full rounded overflow-hidden">
+              <Image
+                src={imgSrc}
+                alt={`${work.clientName} image ${imgIndex}`}
+                fill
+                style={{ objectFit: 'cover' }}
+                className="shadow-sm"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
     </motion.div>
   )
 }
