@@ -9,6 +9,7 @@ interface GeometricPatternProps {
   color?: string
   topLimit?: string
   bottomLimit?: string
+  height?: string
 }
 
 const GeometricPattern = ({
@@ -20,6 +21,7 @@ const GeometricPattern = ({
   percentage = 25,
   topLimit = '20%',
   bottomLimit = '80%',
+  height = 'h-[45vh]',
 }: GeometricPatternProps) => {
   const patternStyle = {
     width: '100%',
@@ -63,7 +65,7 @@ const GeometricPattern = ({
   }
 
   return (
-    <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none h-[45vh]">
+    <div className={`absolute inset-0 -z-20 overflow-hidden pointer-events-none ${height}`}>
       <div className="w-full h-full" style={patternStyle} />
     </div>
   )

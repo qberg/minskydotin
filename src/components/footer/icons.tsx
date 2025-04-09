@@ -10,7 +10,7 @@ export interface IconProps {
 export const LinkedInIcon: React.FC<IconProps> = ({
   className = '',
   size = 24,
-  color = '#00D46B',
+  color = 'currentColor',
   title = 'LinkedIn',
 }) => {
   return (
@@ -19,9 +19,8 @@ export const LinkedInIcon: React.FC<IconProps> = ({
       height={size}
       viewBox="0 0 24 25"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-labelledby={`linkedin-icon-title-${title.replace(/\s+/g, '-').toLowerCase()}`}
+      xmlns="http://www.w3.org/2000/svg"
       role="img"
     >
       {title && (
@@ -40,7 +39,7 @@ export const LinkedInIcon: React.FC<IconProps> = ({
 export const EmailIcon: React.FC<IconProps> = ({
   className = '',
   size = 24,
-  color = 'white',
+  color = 'currentColor',
   title = 'Email',
 }) => {
   return (
@@ -68,7 +67,7 @@ export const EmailIcon: React.FC<IconProps> = ({
 export const PhoneIcon: React.FC<IconProps> = ({
   className = '',
   size = 24,
-  color = 'white',
+  color = 'currentColor',
   title = 'Phone',
 }) => {
   return (

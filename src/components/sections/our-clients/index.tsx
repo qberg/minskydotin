@@ -62,16 +62,13 @@ const OurClients = () => {
     <motion.section
       ref={clientsRef}
       className=" flex items-center justify-center relative overflow-hidden"
-      style={{ opacity: sectionOpacity }}
+      style={{ padding: 'clamp(1.5rem, 0.2775rem + 4.9771vw, 6.25rem)', opacity: sectionOpacity }}
     >
       <motion.div>
         <DashedGridPattern />
       </motion.div>
 
-      <div
-        className="w-full max-w-[1760px] mx-auto flex flex-col"
-        style={{ padding: 'clamp(1.5rem, 1.5vw, 2.5rem)', gap: 'clamp(1rem, 4vw, 3.5rem)' }}
-      >
+      <div className="w-full max-w-[1720px] mx-auto flex flex-col gap-14">
         <motion.h2 style={{ opacity: headerOpacity, y: headerY }}>/Our Clients</motion.h2>
         {/* Logos grid */}
         <motion.div

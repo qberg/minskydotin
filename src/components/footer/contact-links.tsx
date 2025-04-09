@@ -34,11 +34,11 @@ const ContactLinks = () => {
           <a
             key={index}
             href={contact.href}
-            className={`flex items-center justify-start gap-2 ${index === 0 ? 'text-footer-green' : ''}`}
+            className={`flex items-center justify-start gap-2 group hover:text-matrix-green`}
             target={contact.href.startsWith('http') ? '_blank' : undefined}
             rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
           >
-            <Icon />
+            <Icon className="text-white group-hover:text-matrix-green transition-colors" />
             <h5>{contact.label}</h5>
           </a>
         )

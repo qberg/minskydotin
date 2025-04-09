@@ -57,11 +57,13 @@ const Footer = () => {
   const formInView = useInView(formRef, { once: true, amount: 0.3 })
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div
-        className="w-full max-w-[1760px] mx-auto flex flex-col"
-        style={{ padding: 'clamp(1.5rem, 1.5vw, 2.5rem)', gap: 'clamp(2rem, 4vw, 3.5rem)' }}
-      >
+    <div
+      className="min-h-screen flex items-center justify-center bg-background"
+      style={{
+        padding: 'clamp(1.5rem, 0.2775rem + 4.9771vw, 6.25rem)',
+      }}
+    >
+      <div className="w-full max-w-[1720px] mx-auto flex flex-col gap-14">
         <motion.h2
           ref={headerRef}
           initial={{ opacity: 0, y: 20 }}

@@ -109,13 +109,3 @@ const MainHero = () => {
 }
 
 export default MainHero
-
-{
-  /*container for the monitor like thingy*/
-}
-{
-  /* Montior: clamp(44.125rem, 39.1385rem + 20.3012vw, 63.5rem) clamp(39.5rem, 37.7628rem + 7.0727vw, 46.25rem)
-
-          height: 'min(calc(80vh), clamp(44.125rem, 39.1385rem + 20.3012vw, 63.5rem))',
-      */
-}

@@ -89,7 +89,7 @@ const WorkCard = ({
   }
 
   return (
-    <Link href="/clients">
+    <Link href={`/portfolio/${work.slug}`}>
       <motion.div
         ref={targetRef}
         style={{ minHeight: 'clamp(7rem, 8vh, 11rem)' }}
@@ -130,7 +130,7 @@ const WorkCard = ({
           >
             <span className="text-2xs">[{`0${index + 1}`}]</span>
             <motion.h3
-              className={`${isHovered || isMobile ? 'text-primary' : 'text-widecard-secondary'}`}
+              className={`${isHovered || isMobile ? 'text-primary text-2xl' : 'text-primary'}`}
               variants={variants.title}
               animate={animationState}
             >

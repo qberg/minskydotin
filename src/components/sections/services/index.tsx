@@ -10,8 +10,8 @@ const animationOrder = {
   initial: 0,
   headerStart: 0.1,
   headerEnd: 0.25,
-  cardsStart: 0.25,
-  cardsEnd: 0.4,
+  cardsStart: 0.15,
+  cardsEnd: 0.35,
   sectionFadeOutStart: 0.65,
   final: 0.9,
 }
@@ -44,12 +44,9 @@ const Services = () => {
     <motion.section
       ref={targetRef}
       className="min-h-screen flex items-center justify-center relative"
-      style={{ opacity: sectionOpacity }}
+      style={{ padding: 'clamp(1.5rem, 0.2775rem + 4.9771vw, 6.25rem)', opacity: sectionOpacity }}
     >
-      <div
-        className="w-full max-w-[1760px] mx-auto flex flex-col"
-        style={{ padding: 'clamp(1.5rem, 1.5vw, 2.5rem)', gap: 'clamp(1rem, 4vw, 3.5rem)' }}
-      >
+      <div className="w-full max-w-[1720px] mx-auto flex flex-col gap-14">
         <motion.h2 style={{ opacity: headerOpacity, y: headerY }}>/Our Services</motion.h2>
         <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {servicesData.map((service, index) => (

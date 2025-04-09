@@ -24,8 +24,8 @@
   --text-2xs: clamp(0.75rem, 0.5rem + 1.25vw, 1.25rem);
   --text-s: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
   --text-m: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
-  --text-xl: clamp(1.5rem, 1rem + 1.25vw, 2.75rem);
-  --text-2xl: clamp(2rem, 1.5rem + 1.25vw, 3.75rem);
+  --text-xl: clamp(1.5rem, 1.1622rem + 1.3752vw, 2.8125rem);
+  --text-2xl: clamp(2rem, 1.5496rem + 1.8337vw, 3.75rem);
   --text-3xl: clamp(2.25rem, 1.75rem + 2.5vw, 5rem);
 
   --breakpoint-3xl: 120rem;
@@ -34,6 +34,8 @@
 }
 
 @theme inline {
+  /* Navbar */
+  --color-navbar-background: var(--minsky-charcoal);
   /* Theme colors */
   --color-background: var(--minsky-black);
   --color-secondary-background: var(--minsky-dark-gray);

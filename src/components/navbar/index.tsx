@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import React, { useRef, useState } from 'react'
 import { motion, useMotionValueEvent, useScroll } from 'motion/react'
 
@@ -37,7 +36,7 @@ const Navbar: React.FC = () => {
           <Image src="/logo.svg" alt="Minsky logo" width={80} height={40} priority />
         </TransitionLink>
 
-        <div className="hidden sm:flex  items-center justify-between w-[350px] bg-secondary-background px-2 py-2 rounded-lg">
+        <div className="hidden sm:flex  items-center justify-between w-[350px] bg-navbar-background px-2 py-2 rounded-lg">
           {navItems.map((item, index) => (
             <React.Fragment key={index}>
               {index > 0 && <span className="text-light-gray">|</span>}
@@ -51,7 +50,6 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Mobile Nav */}
         <NavMenu />
       </nav>
     </motion.header>

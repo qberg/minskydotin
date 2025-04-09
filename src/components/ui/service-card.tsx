@@ -21,8 +21,8 @@ const ServiceCard = ({ service, index, parentScrollYProgress }: ServiceCardProps
     offset: ['start end', 'end start'],
   })
 
-  const startShow = 0.25 + index * 0.05
-  const endShow = 0.4 + index * 0.05
+  const startShow = 0.15 + index * 0.05
+  const endShow = 0.35 + index * 0.05
 
   const parentOpacity = useTransform(parentScrollYProgress, [startShow, endShow], [0, 1])
 
@@ -62,7 +62,7 @@ const ServiceCard = ({ service, index, parentScrollYProgress }: ServiceCardProps
               key={index}
               className="bg-badge-background border border-badge-border w-max rounded-lg py-1 md:py-2 px-2 md:px-4"
             >
-              <span className="text-2xs text-badge-foreground">{tag}</span>
+              <span className="text-m text-badge-foreground">{tag}</span>
             </motion.div>
           ))}
         </motion.div>

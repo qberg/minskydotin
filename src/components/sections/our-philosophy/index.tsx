@@ -4,6 +4,7 @@ import DashedGridPattern from '@/components/backgrounds/dashed-grid-pattern'
 import RetroMonitor from '@/components/ui/retro-monitor'
 import { useRef } from 'react'
 import type { FC } from 'react'
+import GeometricPattern from '@/components/backgrounds/geometric-grid-pattern'
 
 const animationOrder = {
   initial: 0,
@@ -13,10 +14,10 @@ const animationOrder = {
   gridFadeOutEnd: 0.9,
   headerStart: 0.1,
   headerEnd: 0.25,
-  monitorStart: 0.25,
-  monitorEnd: 0.45,
-  textStart: 0.4,
-  textEnd: 0.55,
+  monitorStart: 0.15,
+  monitorEnd: 0.35,
+  textStart: 0.2,
+  textEnd: 0.35,
   sectionFadeOutStart: 0.65,
   final: 0.9,
 }
@@ -94,19 +95,17 @@ const OurPhilosophy: FC = () => {
   return (
     <motion.section
       ref={philRef}
-      className="min-h-screen flex items-center justify-center relative"
-      style={{ opacity: sectionOpacity }}
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      style={{
+        opacity: sectionOpacity,
+        padding: 'clamp(1.5rem, 0.2775rem + 4.9771vw, 6.25rem)',
+      }}
     >
       <motion.div style={{ opacity: gridOpacity }}>
+        <GeometricPattern topLimit="5%" bottomLimit="95%" height="h-[100vh]" />
         <DashedGridPattern />
       </motion.div>
-      <div
-        className="container mx-auto flex flex-col"
-        style={{
-          padding: 'clamp(1.5rem, 1.5vw, 2.5rem)',
-          gap: 'clamp(1rem,4vw,3.5rem)',
-        }}
-      >
+      <div className="w-full max-w-[1720px] mx-auto flex flex-col gap-14">
         <motion.h2
           style={{
             opacity: headerOpacity,
@@ -121,7 +120,10 @@ const OurPhilosophy: FC = () => {
           /Our Development Philosophy
         </motion.h2>
 
-        <div className="grid grid-cols-12 gap-4">
+        <div
+          className="grid grid-cols-12"
+          style={{ gap: 'clamp(1rem, 0.3566rem + 2.6195vw, 3.5rem)' }}
+        >
           <motion.div
             className="col-span-12 xl:col-span-5"
             style={{
@@ -132,7 +134,7 @@ const OurPhilosophy: FC = () => {
             <RetroMonitor />
           </motion.div>
 
-          <div className="col-span-12 xl:col-span-7 flex flex-col">
+          <div className="col-span-12 xl:col-span-7 flex flex-col items-center">
             <motion.p
               style={{
                 marginBottom: 'clamp(0.75rem, 2vw, 1.5rem)',
