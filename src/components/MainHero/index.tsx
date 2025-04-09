@@ -48,9 +48,9 @@ const MainHero = () => {
           }}
         >
           <InteractiveGrid
-            cellSize={24}
+            cellSize={64}
             gridColor="rgba(128, 128, 128, 0.1)"
-            highlightColor="rgba(1, 212, 107, 0.5)"
+            highlightColor="rgba(1, 212, 107, 1.0)"
             fadeTime={1500}
           />
           <div
