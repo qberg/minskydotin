@@ -16,11 +16,6 @@ export const metadata = {
 
 export const viewport: Viewport = {
   width: 'device-width',
-  initialScale: 0.75,
-  maximumScale: 0.75,
-  userScalable: false,
-  // Also supported but less commonly used
-  // interactiveWidget: 'resizes-visual',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
