@@ -17,7 +17,7 @@ const TableOfContents = () => {
   })
 
   return (
-    <div className="hidden 2xl:block w-full max-w-sm border-r border-secondary-background">
+    <div className="hidden lg:block w-full lg:max-w-xs xl:max-w-sm border-r border-secondary-background">
       <motion.div
         className="sticky top-25 flex gap-4 h-[75vh]"
         initial={{
@@ -55,7 +55,7 @@ const TableOfContents = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 w-full">
+        <div className="flex flex-col gap-6 w-full mr-1">
           {sections.map(({ id, title }) => (
             <motion.div
               key={`${id}-${title}`}

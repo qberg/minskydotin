@@ -22,7 +22,7 @@ const BlogPost = ({ blog }: BlogPostProps) => {
       >
         <TableOfContents />
 
-        <div className="w-full 2xl:max-w-6xl flex flex-col gap-8 2xl:gap-16 items-center justify-center">
+        <div className="w-full xl:max-w-5xl 2xl:max-w-6xl flex flex-col gap-8 2xl:gap-16 items-center justify-center">
           <article className="w-full flex flex-col gap-8 2xl:gap-16">
             <div className="flex flex-col gap-4 text-teritary">
               {blog.paragraphs.map((para, index) => (
