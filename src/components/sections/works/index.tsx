@@ -127,20 +127,4 @@ const Works = () => {
   )
 }
 
-{
-  /*interface WorkCardProps {
-  work: WorkData
-  isHovered: boolean
-}
-
-const WorkCard = ({ work,isHovered }: WorkCardProps) => {
-  return (
-    <div className=''>
-      <h3>{work.clientName}</h3>
-    </div>
-  )
-}
-*/
-}
-
 export default Works

@@ -6,8 +6,7 @@ const fametn: Project = {
     name: 'FaMe TN',
     tags: ['Website', 'CMS'],
     imageSrc: '/fametn/preview.png',
-    description:
-      'Official government platform supporting MSMEs in Tamil Nadu. Built with Strapi CMS and Next.js for easy content management and scalability.',
+    description: 'Showcasing MSME growth with clean and government-friendly website',
   },
   hero: {
     title: 'A modern website for promoting MSME trade and investment in Tamil Nadu',
@@ -44,8 +43,8 @@ const fametn: Project = {
     ],
     imageSrc: '/fametn/fametn-hp.png',
     imageAlt: 'FaMe TN Homepage',
-    aspectWidth: 1920,
-    aspectHeight: 9030,
+    aspectWidth: 400,
+    aspectHeight: 1881,
   },
 }
 

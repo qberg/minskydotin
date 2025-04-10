@@ -6,19 +6,18 @@ const icdic: Project = {
     name: 'ICDIC',
     tags: ['Website', 'CMS'],
     imageSrc: '/icdic/cover.png',
-    description:
-      'A public-facing platform for MSME support, offering guidance, incentives, and access to vital resources for entrepreneurs across Tamil Nadu.',
+    description: 'Built a public-facing platform to streamline MSME support and services',
   },
   hero: {
     title: 'Empowering MSMEs with incentives, support schemes, and expert facilitation',
-    imageSrc: '/icdic/preview.png',
+    imageSrc: '/icdic/cover.png',
     client: {
       name: 'Client',
       tags: ['ICDIC'],
     },
     services: {
       name: 'Service Provided',
-      tags: ['UX/UI', 'Development', 'CMS Integration'],
+      tags: ['UX/UI', 'Development'],
     },
     deliverables: {
       name: 'Deliverables',
@@ -35,8 +34,8 @@ const icdic: Project = {
       'The Industries Commissionerate and Directorate of Industries and Commerce (ICDIC) plays a crucial role in the MSME ecosystem of Tamil Nadu. It offers support across the entire MSME journey—from startup guidance to export facilitation.',
       'We created a centralized digital platform to clearly communicate the breadth of ICDIC’s services. The site helps MSMEs access financial schemes, land acquisition support, marketing aid, and business facilitation. It also allows easy discovery of policy documents, contact information, and program updates.',
     ],
-    image1: '/icdic/overview1.png',
-    image2: '/icdic/overview2.png',
+    image1: '/icdic/im1.png',
+    image2: '/icdic/im2.png',
   },
   designDirection: {
     title: 'Design Direction',
@@ -47,8 +46,8 @@ const icdic: Project = {
     ],
     imageSrc: '/icdic/icdic-hp.png',
     imageAlt: 'ICDIC Homepage',
-    aspectWidth: 2048,
-    aspectHeight: 4750,
+    aspectWidth: 1440,
+    aspectHeight: 5405,
   },
 }
 

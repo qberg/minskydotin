@@ -29,7 +29,12 @@ const StickyScrollBlock: React.FC<StickyScrollBlockProps> = ({
         <ParaBlocks heading="" paragraphs={paragraphs} />
       </div>
 
-      <div className={`w-full mt-2 md:mt-0 md:w-1/2 aspect-[2/9] relative`}>
+      <div
+        className="w-full mt-2 md:mt-0 md:w-1/2 relative"
+        style={{
+          aspectRatio: `${aspectWidth}/${aspectHeight}`,
+        }}
+      >
         <BlurImage src={imageSrc} alt={imageAlt} fill priority className="object-contain" />
       </div>
     </section>

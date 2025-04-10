@@ -4,10 +4,9 @@ const coord: Project = {
   slug: 'coord',
   card: {
     name: 'COORD',
-    tags: ['Website', 'CRM'],
+    tags: ['CRM', 'Website'],
     imageSrc: '/coord/im2.png',
-    description:
-      'Expert of the work goes here: Lorem ipsum odor amet, consectetuer adipiscing elit. Magna hendrerit cursus',
+    description: 'A  dynamic website and a simple CRM for a craft community platform',
   },
   hero: {
     title: 'A  dynamic website and a simple CRM for a craft community platform',

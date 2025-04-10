@@ -44,7 +44,7 @@ const MainHero = () => {
             height: 'clamp(39.5rem, 37.7628rem + 7.0727vw, 46.25rem)',
             padding: 'clamp(1rem, 4vw, 3rem)',
             boxShadow:
-              '0 0 20px 10px rgba(128, 128, 128, 0.3), 0 0 40px 20px rgba(128, 128, 128, 0.1)',
+              '0 0 50px 40px rgba(128, 128, 128, 0.3), 0 0 100px 80px rgba(128, 128, 128, 0.1)',
           }}
         >
           <InteractiveGrid
@@ -61,7 +61,7 @@ const MainHero = () => {
             <div className="grid grid-cols-4">
               <h1 className="col-span-4 md:col-span-4 lg:col-span-3 xl:col-span-2 2xl:col-span-2 3xl:col-span-3">
                 <span className="text-secondary">We Design, Develop, & Deploy</span>
-                <span className="text-primary"> Websites.</span>
+                <span className="text-primary"> Web Apps.</span>
               </h1>
             </div>
 
