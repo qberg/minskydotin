@@ -34,7 +34,10 @@ export interface ProjectTextBlock {
 export interface ProjectStickyBlock {
   title: string
   paragraphs: string[]
-  images: string[]
+  imageSrc: string
+  imageAlt: string
+  aspectHeight: number
+  aspectWidth: number
 }
 
 export interface Project {
@@ -42,4 +45,5 @@ export interface Project {
   card: ProjectCard
   hero: ProjectHeroBlock
   overview: ProjectOverviewBlock
+  designDirection: ProjectStickyBlock
 }

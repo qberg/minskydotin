@@ -4,51 +4,51 @@ const icdic: Project = {
   slug: 'icdic',
   card: {
     name: 'ICDIC',
-    tags: ['Website'],
+    tags: ['Website', 'CMS'],
     imageSrc: '/icdic/cover.png',
     description:
-      'Expert of the work goes here: Lorem ipsum odor amet, consectetuer adipiscing elit. Magna hendrerit cursus',
+      'A public-facing platform for MSME support, offering guidance, incentives, and access to vital resources for entrepreneurs across Tamil Nadu.',
   },
   hero: {
-    title: 'A  dynamic website and a simple CRM for a craft community platform',
-    imageSrc: '/pf2.svg',
-
+    title: 'Empowering MSMEs with incentives, support schemes, and expert facilitation',
+    imageSrc: '/icdic/preview.png',
     client: {
       name: 'Client',
-      tags: ['COORD'],
+      tags: ['ICDIC'],
     },
-    services: { name: 'Service Provided', tags: ['UX/UI', 'Development'] },
+    services: {
+      name: 'Service Provided',
+      tags: ['UX/UI', 'Development', 'CMS Integration'],
+    },
     deliverables: {
       name: 'Deliverables',
-      tags: ['Website', 'CRM'],
+      tags: ['Website', 'CMS'],
     },
     techStack: {
       name: 'Tech Stack',
-      tags: ['Nextjs', 'Payload CMS'],
+      tags: ['Next.js', 'Strapi CMS'],
     },
   },
   overview: {
     title: 'Overview',
     paragraphs: [
-      'COORD connects artists, designers, and businesses with handcrafted works. The website enables users to browse artist collections, request catalog pieces, or commission custom crafts—whether for personal use, décor projects, or corporate needs.',
-      'Minsky was responsible for UX/UI design, strategy, and development, ensuring a seamless experience for both craft seekers and artists. We built a robust CRM and website, allowing COORD to manage artist collaborations, streamline craft sourcing, and handle bulk or custom orders efficiently.',
+      'The Industries Commissionerate and Directorate of Industries and Commerce (ICDIC) plays a crucial role in the MSME ecosystem of Tamil Nadu. It offers support across the entire MSME journey—from startup guidance to export facilitation.',
+      'We created a centralized digital platform to clearly communicate the breadth of ICDIC’s services. The site helps MSMEs access financial schemes, land acquisition support, marketing aid, and business facilitation. It also allows easy discovery of policy documents, contact information, and program updates.',
     ],
-
-    image1: '/coord/overview1.png',
-    image2: '/coord/overview2.png',
+    image1: '/icdic/overview1.png',
+    image2: '/icdic/overview2.png',
   },
-
   designDirection: {
     title: 'Design Direction',
     paragraphs: [
-      'The primary design goal for COORD’s design was simplicity and ease of use. With a content-rich platform featuring multiple layers of navigation, every interaction was carefully structured to minimize friction. Users needed a seamless way to browse crafts, understand their options, and take action without confusion.',
-      'Navigation was a critical focus—each pathway was designed to reduce the number of steps required to reach the final action: connecting with a COORD representative. The browsing experience was streamlined to ensure that users could explore crafts effortlessly while always having a clear next step.',
-      'Visually, the design embraced clean aesthetics and an intuitive layout. A refined color palette and well-structured content ensured clarity, allowing the crafts to take center stage. The result was a platform that balanced visual elegance with functional efficiency.',
+      'The site was designed to be direct and functional, with a strong emphasis on accessibility. Icons and bold typographic cues guide users through a wide set of services without feeling overwhelmed.',
+      'Given the site’s government backing and diverse audience, the interface was developed with clarity and trust in mind. Users can quickly identify their needs—whether financial assistance or export facilitation—and act with confidence.',
+      'We also built a CMS-backed system using Strapi, empowering officials to manage updates, events, and scheme-related content with ease, ensuring the platform stays fresh and relevant.',
     ],
-    imageSrc: '/coord/coord-hp.png',
-    imageAlt: 'Coord Homepage',
-    aspectWidth: 1920,
-    aspectHeight: 8625,
+    imageSrc: '/icdic/icdic-hp.png',
+    imageAlt: 'ICDIC Homepage',
+    aspectWidth: 2048,
+    aspectHeight: 4750,
   },
 }
 
