@@ -1,4 +1,5 @@
 import ProjectHero from '@/components/ProjectHero'
+import StickyScrollBlock from '@/components/sticky-scroll-block'
 import TwoImageBlock from '@/components/text-image-blocks/two-image-block'
 import { getProjectBySlug } from '@/lib/projects'
 import { notFound } from 'next/navigation'
@@ -26,6 +27,7 @@ export default async function ProjectsPage({ params }: ProjectPageProps) {
     <div className="w-full h-full">
       <ProjectHero {...project.hero} />
       <TwoImageBlock {...project.overview} />
+      <StickyScrollBlock {...project.designDirection} />
     </div>
   )
 }
