@@ -14,6 +14,7 @@ import {
 import { Input } from '@/components/ui/input'
 import ShweayButton from '@/components/ui/shweay-button'
 import { Textarea } from '@/components/ui/text-area'
+import { useState } from 'react'
 
 const formSchema = z.object({
   fullName: z
@@ -54,6 +55,8 @@ const formSchema = z.object({
 })
 
 export default function MyForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const form = useForm({
     mode: 'onBlur',
     resolver: zodResolver(formSchema),
@@ -64,11 +67,46 @@ export default function MyForm() {
       message: '',
     },
   })
+  const onSubmit = async (data) => {
+    try {
+      setIsSubmitting(true)
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit form')
+      }
+
+      toast.success('Form submitted successfully!', {
+        description: 'We will get back to you soon.',
+        duration: 5000,
+      })
+
+      form.reset()
+    } catch (error) {
+      console.error('Submission error:', error)
+
+      toast.error('Failed to submit form', {
+        description: 'Please try again later.',
+        duration: 5000,
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <Form {...form}>
       <form
-        onSubmit={() => toast('Submitted')}
+        onSubmit={form.handleSubmit(onSubmit)}
         className="flex flex-col flex-grow overflow-hidden w-full h-full"
         style={{
           padding: 'clamp(1rem, 0.4853rem + 2.0956vw, 3rem)',
@@ -137,7 +175,7 @@ export default function MyForm() {
               height: 'clamp(40px, 6vw, 72px)',
             }}
           >
-            <ShweayButton label="contact" />
+            <ShweayButton label={isSubmitting ? 'Sending...' : 'Contact'} disabled={isSubmitting} />
           </div>
         </div>
       </form>

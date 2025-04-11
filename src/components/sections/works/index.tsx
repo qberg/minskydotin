@@ -88,7 +88,7 @@ const Works = () => {
   return (
     <motion.section
       ref={worksRef}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="flex items-center justify-center relative overflow-hidden"
       style={{ padding: 'clamp(1.5rem, 0.2775rem + 4.9771vw, 6.25rem)', opacity: sectionOpacity }}
     >
       <motion.div className="w-full max-w-[1720px] mx-auto flex flex-col gap-14">

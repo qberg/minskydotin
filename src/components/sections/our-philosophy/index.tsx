@@ -95,7 +95,7 @@ const OurPhilosophy: FC = () => {
   return (
     <motion.section
       ref={philRef}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="flex items-center justify-center relative overflow-hidden"
       style={{
         opacity: sectionOpacity,
         padding: 'clamp(1.5rem, 0.2775rem + 4.9771vw, 6.25rem)',
