@@ -54,6 +54,8 @@ const formSchema = z.object({
     .transform((val) => val?.trim() ?? ''),
 })
 
+type FormData = z.infer<typeof formSchema>
+
 export default function MyForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -67,7 +69,7 @@ export default function MyForm() {
       message: '',
     },
   })
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: FormData) => {
     try {
       setIsSubmitting(true)
 

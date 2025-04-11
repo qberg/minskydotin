@@ -440,7 +440,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
           fontFamily: terminalFont,
         }}
       >
-        // THIS_IS_AN_AUTOMATED_MESSAGE // DO_NOT_REPLY_DIRECTLY //
+        THIS_IS_AN_AUTOMATED_MESSAGE // DO_NOT_REPLY_DIRECTLY
       </p>
       <p
         style={{
