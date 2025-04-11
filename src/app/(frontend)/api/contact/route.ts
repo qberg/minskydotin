@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     // Send admin notification
     await resend.emails.send({
       from: `MINSKY <${SENDER_EMAIL}>`,
-      to: ['info@minsky.in', 'shweta@minsky.in', 'reneeth@minsky.in'],
+      to: ['info@minsky.in', 'shweta@minsky.in'],
       subject: `New Form Submission at Minsky.in from ${fullName}`,
       react: renderEmail({
         fullName,
