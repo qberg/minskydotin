@@ -97,7 +97,15 @@ const MainHero = () => {
                     height: 'clamp(40px, 6vw, 72px)',
                   }}
                 >
-                  <ShweayButton label="contact" />
+                  <ShweayButton
+                    label="contact"
+                    onClick={() =>
+                      window.scrollTo({
+                        top: document.documentElement.scrollHeight,
+                        behavior: 'smooth',
+                      })
+                    }
+                  />
                 </div>
               </div>
             </div>
