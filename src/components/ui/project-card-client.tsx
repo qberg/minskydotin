@@ -21,33 +21,37 @@ const ProjectCardClient: React.FC<ProjectCardProps> = ({
   const [isHovering, setIsHovering] = useState(false)
   const imageContainerRef = useRef<HTMLDivElement>(null)
 
-  // Create spring animations for the magnetic effect
-  const springConfig = { damping: 25, stiffness: 200 }
+  const springConfig = { damping: 25, stiffness: 150 }
   const x = useSpring(0, springConfig)
   const y = useSpring(0, springConfig)
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleMouseEnter = (e: React.MouseEvent) => {
     if (imageContainerRef.current) {
       const rect = imageContainerRef.current.getBoundingClientRect()
 
-      // Calculate mouse position relative to container
       const relativeX = e.clientX - rect.left
       const relativeY = e.clientY - rect.top
 
-      // Update spring values for the magnetic effect
       x.set(relativeX + 15)
       y.set(relativeY + 15)
+
+      setIsHovering(true)
     }
   }
 
   const handleMouseLeave = () => {
     setIsHovering(false)
+  }
 
-    // Reset spring positions to center when mouse leaves
-    if (imageContainerRef.current) {
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (imageContainerRef.current && isHovering) {
       const rect = imageContainerRef.current.getBoundingClientRect()
-      x.set(rect.width / 2)
-      y.set(rect.height / 2)
+
+      const relativeX = e.clientX - rect.left
+      const relativeY = e.clientY - rect.top
+
+      x.set(relativeX + 15)
+      y.set(relativeY + 15)
     }
   }
 
@@ -67,11 +71,11 @@ const ProjectCardClient: React.FC<ProjectCardProps> = ({
         ref={imageContainerRef}
         className="relative rounded-xl w-full mx-auto overflow-hidden"
         style={{ height: 'clamp(23rem, 19.8101rem + 12.987vw, 29.875rem)' }}
-        onMouseEnter={() => setIsHovering(true)}
+        onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
       >
-        <motion.div animate={{ opacity: isHovering ? 0.7 : 1 }} transition={{ duration: 0.2 }}>
+        <motion.div animate={{ opacity: isHovering ? 0.6 : 1 }} transition={{ duration: 0.2 }}>
           {children}
         </motion.div>
 
@@ -82,9 +86,12 @@ const ProjectCardClient: React.FC<ProjectCardProps> = ({
               x,
               y,
             }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.1 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              opacity: { duration: 0.2 },
+              scale: { type: 'spring', stiffness: 300, damping: 25 },
+            }}
           >
             <p className="text-matrix-green text-sm">View Work</p>
           </motion.div>
