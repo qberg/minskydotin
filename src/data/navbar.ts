@@ -4,6 +4,6 @@ interface NavItem {
 }
 export const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
-  { label: 'Work', path: '/work' },
+  { label: 'Works', path: '/work' },
   { label: 'Blog', path: '/blogs' },
 ]
