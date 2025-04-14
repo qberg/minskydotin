@@ -12,7 +12,7 @@ interface ProjectCardProps {
 const ProjectCard = async ({ name, tags, imageSrc, description, slug }: ProjectCardProps) => {
   return (
     <Link
-      href={`/portfolio/${slug}`}
+      href={`/work/${slug}`}
       className="flex flex-col gap-4 w-full max-w-md overflow-hidden"
       style={{
         height: 'clamp(29rem, 24.0121rem + 20.307vw, 39.75rem)',

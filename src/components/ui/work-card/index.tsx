@@ -63,7 +63,7 @@ const WorkCard = ({
   }
 
   return (
-    <Link href={`/portfolio/${work.slug}`}>
+    <Link href={`/work/${work.slug}`}>
       <motion.div
         ref={targetRef}
         style={{ minHeight: 'clamp(7rem, 8vh, 11rem)' }}

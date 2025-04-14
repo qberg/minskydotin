@@ -35,7 +35,7 @@ const fametn: Project = {
     image2: '/fametn/overview2.png',
   },
   designDirection: {
-    title: 'Design Direction',
+    title: 'Approach',
     paragraphs: [
       'The site needed to feel both authoritative and accessible, reflecting FaMe TN’s mission of empowering local businesses. We opted for a clean layout with a strong focus on information clarity and multilingual support readiness.',
       'Navigation was tailored for different user groups — from business owners to international investors — making it easy to explore incentives, schemes, and policy updates.',

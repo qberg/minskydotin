@@ -1,6 +1,6 @@
+import BlurImage from '@/components/BlurImage'
 import NamedTags from '@/components/ui/named-tags'
 import { ProjectTags } from '@/types/projects'
-import Image from 'next/image'
 
 interface ProjectHeroProps {
   title: string
@@ -33,7 +33,7 @@ const ProjectHero = ({
           className="relative w-full order-2 md:w-1/2 md:max-w-4xl lg:order-1 rounded-xl overflow-hidden"
           style={{ height: 'clamp(23rem, 17.2736rem + 23.3137vw, 45.25rem)' }}
         >
-          <Image
+          <BlurImage
             src={imageSrc}
             alt={`${title}-Cover Photo`}
             fill

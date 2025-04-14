@@ -18,7 +18,7 @@ export const workData: WorkData[] = [
     slug: 'icdic',
     clientName: 'ICDIC',
     deliverables: 'Website + CMS',
-    description: 'Empowering MSMEs with incentives, support schemes, and expert facilitation',
+    description: 'Empowering MSMEs with incentives, support schemes, and expert facilitation.',
     images: [
       '/icdic/im1.png',
       '/icdic/cover.png',
@@ -32,7 +32,7 @@ export const workData: WorkData[] = [
     slug: 'tngss',
     clientName: 'TNGSS',
     deliverables: 'Website + Mobile App',
-    description: 'A Feature-Rich App Built for Networking and Navigation',
+    description: 'A Feature-Rich App Built for Networking and Navigation.',
     images: [
       '/tngss/im1.png',
       '/tngss/im2.png',

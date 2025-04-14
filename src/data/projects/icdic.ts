@@ -38,7 +38,7 @@ const icdic: Project = {
     image2: '/icdic/im2.png',
   },
   designDirection: {
-    title: 'Design Direction',
+    title: 'Approach',
     paragraphs: [
       'The site was designed to be direct and functional, with a strong emphasis on accessibility. Icons and bold typographic cues guide users through a wide set of services without feeling overwhelmed.',
       'Given the site’s government backing and diverse audience, the interface was developed with clarity and trust in mind. Users can quickly identify their needs—whether financial assistance or export facilitation—and act with confidence.',

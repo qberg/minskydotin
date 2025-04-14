@@ -35,11 +35,12 @@ const coord: Project = {
     image2: '/coord/overview2.png',
   },
   designDirection: {
-    title: 'Design Direction',
+    title: 'Approach',
     paragraphs: [
       'The primary design goal for COORD’s design was simplicity and ease of use. With a content-rich platform featuring multiple layers of navigation, every interaction was carefully structured to minimize friction. Users needed a seamless way to browse crafts, understand their options, and take action without confusion.',
       'Navigation was a critical focus—each pathway was designed to reduce the number of steps required to reach the final action: connecting with a COORD representative. The browsing experience was streamlined to ensure that users could explore crafts effortlessly while always having a clear next step.',
       'Visually, the design embraced clean aesthetics and an intuitive layout. A refined color palette and well-structured content ensured clarity, allowing the crafts to take center stage. The result was a platform that balanced visual elegance with functional efficiency.',
+      'The website is integrated with Payload CMS, giving the client a drag and drop building blocks for webpages and also the power to change the content at will.',
     ],
     imageSrc: '/coord/coord-hp.png',
     imageAlt: 'Coord Homepage',

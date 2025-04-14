@@ -97,7 +97,7 @@ const Works = () => {
           style={{ opacity: headerOpacity, y: headerY }}
         >
           <h2>/Our Works</h2>
-          <TransitionLink href="/portfolio" className="text-widecard-secondary text-m">
+          <TransitionLink href="/work" className="text-widecard-secondary text-m">
             View All
           </TransitionLink>
         </motion.div>

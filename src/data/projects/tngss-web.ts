@@ -38,7 +38,7 @@ const tngssWeb: Project = {
   },
 
   designDirection: {
-    title: 'Design Direction',
+    title: 'Approach',
     paragraphs: [
       'The TNGSS website was designed to feel like the launchpad it represents — bold, energetic, and future-facing.',
       'Minsky led the design with a clear intent: To build a digital experience that matches the scale, ambition, and global outlook of the summit.',

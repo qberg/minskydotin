@@ -38,7 +38,7 @@ const tngss: Project = {
   },
 
   designDirection: {
-    title: 'Design Direction',
+    title: 'Approach',
     paragraphs: [
       'For the TNGSS app, we took a bold, modern approach — going with a dark theme inspired by the energy of space exploration and rocket launches. The theme not only created a premium, futuristic feel but also aligned with the summit’s mission: propelling startups to global heights.',
       'Subtle rocket-inspired elements were integrated across the UI — from iconography to micro-interactions — to evoke motion, ambition, and lift-off.',
