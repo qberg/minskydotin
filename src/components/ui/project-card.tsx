@@ -1,5 +1,5 @@
 import BlurImage from '@/components/BlurImage'
-import Link from 'next/link'
+import ProjectCardClient from '@/components/ui/project-card-client'
 
 interface ProjectCardProps {
   name: string
@@ -11,34 +11,16 @@ interface ProjectCardProps {
 
 const ProjectCard = async ({ name, tags, imageSrc, description, slug }: ProjectCardProps) => {
   return (
-    <Link
-      href={`/work/${slug}`}
-      className="flex flex-col gap-4 w-full max-w-md overflow-hidden"
-      style={{
-        height: 'clamp(29rem, 24.0121rem + 20.307vw, 39.75rem)',
-      }}
-    >
-      <div className="flex justify-between items-center">
-        <h3>{name}</h3>
-        <p>{tags[0]}</p>
-      </div>
-
-      <div
-        className="relative rounded-xl w-full mx-auto overflow-hidden"
-        style={{ height: 'clamp(23rem, 19.8101rem + 12.987vw, 29.875rem)' }}
-      >
-        <BlurImage
-          src={imageSrc}
-          alt={`${name} Project Showcase Image`}
-          fill
-          priority
-          className="object-cover"
-          sizes="30vw"
-        />
-      </div>
-
-      <p>{description}</p>
-    </Link>
+    <ProjectCardClient name={name} tags={tags} description={description} slug={slug}>
+      <BlurImage
+        src={imageSrc}
+        alt={`${name} Project Showcase Image`}
+        fill
+        priority
+        className="object-cover"
+        sizes="30vw"
+      />
+    </ProjectCardClient>
   )
 }
 
