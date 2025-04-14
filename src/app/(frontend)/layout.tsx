@@ -10,8 +10,8 @@ import Navbar from '@/components/navbar'
 import type { Viewport } from 'next'
 
 export const metadata = {
-  description: 'Digital presence of Minsky labs',
-  title: 'Minsky Labs',
+  description: 'Building Simple and Thoughtful Tech Systems for Your Ideas.',
+  title: 'Minsky',
 }
 
 export const viewport: Viewport = {
