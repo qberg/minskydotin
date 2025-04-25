@@ -27,7 +27,7 @@ const MainHero = () => {
     <motion.section
       style={{ opacity: opacity }}
       ref={heroRef}
-      className="relative h-full min-h-[calc(100vh-var(--navbar-height))] sm:flex items-center justify-center"
+      className="relative h-full min-h-[calc(100svh-var(--navbar-height))] flex items-center justify-center"
     >
       <div className="absolute inset-0 -z-20">
         <CodeBackground />
