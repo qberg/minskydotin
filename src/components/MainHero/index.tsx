@@ -9,6 +9,7 @@ import { useRef, useState } from 'react'
 import ShweayButton from '../ui/shweay-button'
 import { iconComponents } from '@/data/main-hero/icons'
 import { WordAnimation } from '@/components/word-animation'
+import CodingWordsBackground from '@/components/MainHero/coding-words-bg'
 
 const MainHero = () => {
   const [hoveredIcon, setHoveredIcon] = useState<number | null>(null)
@@ -30,7 +31,7 @@ const MainHero = () => {
       className="relative h-full min-h-[calc(100svh-var(--navbar-height))] flex items-center justify-center"
     >
       <div className="absolute inset-0 -z-20">
-        <CodeBackground />
+        <CodingWordsBackground />
       </div>
       <motion.div
         className="max-w-[1760px] h-full flex items-center justify-center"
