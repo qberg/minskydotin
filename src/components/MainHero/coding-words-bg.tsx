@@ -155,9 +155,7 @@ const CodingWordsBackground = () => {
     }
   }, [])
 
-  // Generate lines of code words based on screen size
   useEffect(() => {
-    // Only generate lines if we have valid dimensions
     if (dimensions.width === 0 || dimensions.height === 0) {
       return
     }
@@ -165,13 +163,12 @@ const CodingWordsBackground = () => {
     const fontSize = 16 // Base font size
     const lineHeight = fontSize * 1.5 // Line height
 
-    // Add extra lines to ensure full coverage with some buffer
     const numberOfLines = Math.ceil(dimensions.height / lineHeight) + 2
 
-    const newLines: Line[] = [] // Explicitly type the array
+    const newLines: Line[] = []
     const generateFullLine = () => {
-      const averageCharWidth = fontSize * 0.6 // Approximate width of characters in monospace font
-      const charsNeeded = Math.ceil(dimensions.width / averageCharWidth) * 2 // Double it to ensure coverage
+      const averageCharWidth = fontSize * 0.6
+      const charsNeeded = Math.ceil(dimensions.width / averageCharWidth) * 2
       let line = ''
       while (line.length < charsNeeded) {
         const randomWord = codingWords[Math.floor(Math.random() * codingWords.length)]
@@ -183,15 +180,14 @@ const CodingWordsBackground = () => {
     for (let i = 0; i < numberOfLines; i++) {
       newLines.push({
         text: generateFullLine(),
-        opacity: 0.2, // Set to exactly 15%
+        opacity: 0.16, // Set to exactly 15%
         size: fontSize,
       })
     }
 
     setLines(newLines)
-  }, [dimensions, codingWords])
+  }, [dimensions])
 
-  // Don't render anything during SSR or before dimensions are set
   if (dimensions.width === 0 || dimensions.height === 0) {
     return null
   }

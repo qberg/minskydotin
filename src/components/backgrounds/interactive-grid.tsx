@@ -30,12 +30,13 @@ const InteractiveGrid = ({
   const [gridDimensions, setGridDimensions] = useState({ rows: 0, cols: 0 })
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number } | null>(null)
   const lastUpdateRef = useRef<number>(0)
+  const currentCellRef = useRef<{ row: number; col: number } | null>(null)
 
-  // Calculate grid dimenstions
+  // Calculate grid dimensions
   useEffect(() => {
     if (!containerRef.current) return
 
-    const updateDimenstions = () => {
+    const updateDimensions = () => {
       const container = containerRef.current
       if (!container) return
 
@@ -48,9 +49,9 @@ const InteractiveGrid = ({
       setGridDimensions({ rows, cols })
     }
 
-    updateDimenstions()
+    updateDimensions()
 
-    const resizeObserver = new ResizeObserver(updateDimenstions)
+    const resizeObserver = new ResizeObserver(updateDimensions)
     const currentRef = containerRef.current
 
     if (currentRef) {
@@ -69,7 +70,7 @@ const InteractiveGrid = ({
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const now = performance.now()
 
-    if (now - lastUpdateRef.current < 16) return
+    if (now - lastUpdateRef.current < 16) return // Throttle updates to ~60fps
 
     lastUpdateRef.current = now
 
@@ -84,10 +85,11 @@ const InteractiveGrid = ({
 
   // Handle mouse leave
   const handleMouseLeave = useCallback(() => {
+    // We can leave this empty or re-enable if needed
     // setCells([]);
   }, [])
 
-  // Update cells based on mouse movement
+  // Update cells based on mouse movement - this was causing the issue
   useEffect(() => {
     if (!mousePosition || gridDimensions.rows === 0 || gridDimensions.cols === 0) return
 
@@ -95,19 +97,30 @@ const InteractiveGrid = ({
     const col = Math.floor(x / cellSize)
     const row = Math.floor(y / cellSize)
 
-    if (row >= 0 && row < gridDimensions.rows && col >= 0 && col < gridDimensions.cols) {
+    // Check if we're in a new cell
+    if (
+      row >= 0 &&
+      row < gridDimensions.rows &&
+      col >= 0 &&
+      col < gridDimensions.cols &&
+      (currentCellRef.current?.row !== row || currentCellRef.current?.col !== col)
+    ) {
+      currentCellRef.current = { row, col }
       const now = Date.now()
       const newCellId = `${row}-${col}-${now}`
 
       setCells((prevCells) => {
+        // Check if this exact cell already exists
         const cellExists = prevCells.some((cell) => cell.row === row && cell.col === col)
         if (cellExists) return prevCells
 
         const newCell = { row, col, id: newCellId, timestamp: now }
 
+        // Filter out old cells based on fadeTime
         const filteredCells = prevCells.filter((cell) => now - cell.timestamp < fadeTime)
         const updatedCells = [...filteredCells, newCell]
 
+        // Keep only the most recent cells based on trailLength
         if (updatedCells.length > trailLength) {
           return updatedCells.slice(updatedCells.length - trailLength)
         }
@@ -121,8 +134,15 @@ const InteractiveGrid = ({
   useEffect(() => {
     const cleanupInterval = setInterval(() => {
       const now = Date.now()
-      setCells((prevCells) => prevCells.filter((cell) => now - cell.timestamp < fadeTime))
-    }, 100)
+      setCells((prevCells) => {
+        const filtered = prevCells.filter((cell) => now - cell.timestamp < fadeTime)
+        // Only update state if cells actually changed
+        if (filtered.length !== prevCells.length) {
+          return filtered
+        }
+        return prevCells
+      })
+    }, 500) // Reduced frequency to 500ms instead of 100ms
 
     return () => clearInterval(cleanupInterval)
   }, [fadeTime])
