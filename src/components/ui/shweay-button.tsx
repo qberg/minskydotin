@@ -47,12 +47,7 @@ const ShweayButton = ({ label = 'Contact', className = '', ...buttonProps }: Shw
           borderRadius: 'clamp(0.25rem, 0.5vw, 0.5rem)',
         }}
       >
-        <span
-          className="uppercase text-black font-bold transition-transform duration-200 group-hover:translate-y-px"
-          style={{
-            fontSize: 'clamp(0.875rem, 2vw, 1.5rem)',
-          }}
-        >
+        <span className="uppercase text-black font-medium leading-[1.2] tracking-[-0.02em] transition-transform duration-200 group-hover:translate-y-px text-xs md:text-base sxl:text-[1.25rem] 2xl:text-[1.5rem] 3xl:text-[1.75rem]">
           {label}
         </span>
       </div>

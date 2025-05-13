@@ -1,18 +1,42 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'motion/react'
+import { motion, useScroll, useTransform, Variants } from 'motion/react'
 
-import InteractiveGrid from '../backgrounds/interactive-grid'
-import CodeBackground from './code-background'
-import IconsGrid from './icons-grid'
 import { useRef, useState } from 'react'
-import ShweayButton from '../ui/shweay-button'
-import { iconComponents } from '@/data/main-hero/icons'
-import { WordAnimation } from '@/components/word-animation'
 import CodingWordsBackground from '@/components/MainHero/coding-words-bg'
+import ShweayButton from '@/components/ui/shweay-button'
+import { iconComponents } from '@/data/main-hero/icons'
+import IconsGrid from '@/components/MainHero/icons-grid'
+import InteractiveGrid from '@/components/backgrounds/interactive-grid'
+import { WordAnimation } from '@/components/word-animation'
+
+const fontSize = {
+  fontSize: 'clamp(1.75rem, 1.1964rem + 2.7679vw, 5.625rem)',
+}
+
+const boxShadowVariants: Variants = {
+  initial: {
+    boxShadow: '0px 0px 0px 0px rgba(128, 128, 128, 0.1)',
+  },
+  animate: {
+    boxShadow: [
+      '0px 0px 80px 30px rgba(128, 128, 128, 0.25)',
+      '0px 0px 120px 50px rgba(128, 128, 128, 0.35)',
+      '0px 0px 160px 70px rgba(128, 128, 128, 0.45)',
+      '0px 0px 120px 50px rgba(128, 128, 128, 0.35)',
+      '0px 0px 80px 30px rgba(128, 128, 128, 0.25)',
+    ],
+    transition: {
+      duration: 5,
+      repeat: Infinity,
+      repeatType: 'mirror',
+      ease: [0.42, 0, 0.58, 1], // easeInOutCubic
+    },
+  },
+}
 
 const MainHero = () => {
-  const [hoveredIcon, setHoveredIcon] = useState<number | null>(null)
+  const [hoveredIcon, setHoveredIcon] = useState<number | null>(5)
 
   const heroRef = useRef<HTMLDivElement>(null)
 
@@ -28,90 +52,65 @@ const MainHero = () => {
     <motion.section
       style={{ opacity: opacity }}
       ref={heroRef}
-      className="relative h-full min-h-[calc(100svh-var(--navbar-height))] flex items-center justify-center"
+      className="relative h-[calc(100svh-var(--navbar-height))] flex items-center md:items-stretch justify-center p-5 md:px-10 lg:px-16 sxl:px-24 2xl:px-28 3xl:px-32 4xl:px-40 md:py-5 lg:py-8 sxl:py-12 2xl:py-14 3xl:py-16 4xl:py-20"
     >
       <div className="absolute inset-0 -z-20">
         <CodingWordsBackground />
       </div>
+
       <motion.div
-        className="max-w-[1760px] h-full flex items-center justify-center"
+        variants={boxShadowVariants}
+        initial="initial"
+        animate="animate"
+        className="bg-black w-full rounded-2xl overflow-hidden h-[32rem] md:h-full relative"
         style={{
           scale,
         }}
       >
-        {/* monitor thingy */}
-        <div
-          className="mx-auto w-[95%] h-[95%] relative z-10 border-1 border-background bg-background rounded-2xl sm:rounded-2xl shadow-lg overflow-hidden flex items-center justify-center"
-          style={{
-            height: 'clamp(39.5rem, 37.7628rem + 7.0727vw, 46.25rem)',
-            padding: 'clamp(1rem, 4vw, 3rem)',
-            boxShadow:
-              '0 0 50px 40px rgba(128, 128, 128, 0.3), 0 0 100px 80px rgba(128, 128, 128, 0.1)',
-          }}
-        >
-          <InteractiveGrid
-            cellSize={64}
-            gridColor="rgba(128, 128, 128, 0.1)"
-            highlightColor="rgba(1, 212, 107, 1.0)"
-            fadeTime={1500}
-          />
-          <div
-            className="relative grid grid-rows-[auto_1fr_auto] h-[90%] w-[90%] mx-auto"
-            style={{ gap: 'clamp(1rem, 4vh, 2.5rem)' }}
-          >
-            {/* Row 1 : Heading */}
-            <div className="grid grid-cols-4">
-              <h1 className="col-span-4 md:col-span-4 lg:col-span-3 xl:col-span-2 2xl:col-span-2 3xl:col-span-3">
-                <span className="text-secondary">We Design, Develop, & Deploy </span>
-                <span>
-                  <WordAnimation />
-                </span>
-              </h1>
-            </div>
+        <InteractiveGrid
+          cellSize={64}
+          gridColor="rgba(128, 128, 128, 0.1)"
+          highlightColor="rgba(1, 212, 107, 1.0)"
+          fadeTime={1500}
+        />
+        {/*Monitor Content */}
+        <div className="flex flex-col justify-between h-full w-full px-5 md:px-16 sxl:px-20 2xl:px-24 3xl:px-32 4xl:px-36 py-6 md:py-10 sxl:py-12 2xl:py-20 3xl:py-24 4xl:py-28 overflow-hidden">
+          <h1 style={fontSize} className="text-secondary">
+            We Design, Develop, <br /> & Deploy{' '}
+            <span className="text-primary block sm:inline">
+              <WordAnimation />
+            </span>
+          </h1>
 
-            {/* Row 2: Icons Grid */}
-            <div className="grid grid-cols-9 z-20">
-              <IconsGrid
-                icons={iconComponents}
-                hoveredIcon={hoveredIcon}
-                setHoveredIcon={setHoveredIcon}
-              />
-            </div>
+          {/* Icons grid */}
+          <div className="z-20">
+            <IconsGrid
+              icons={iconComponents}
+              hoveredIcon={hoveredIcon}
+              setHoveredIcon={setHoveredIcon}
+            />
+          </div>
 
-            {/* Row 3: Button*/}
-            <div className="grid grid-cols-9">
-              <div className="col-span-9 flex items-center justify-end z-20">
-                {hoveredIcon !== null && (
-                  <div className="xl:hidden flex flex-col">
-                    <h5>[{iconComponents[hoveredIcon].label}]</h5>
-                    <p
-                      className="w-full"
-                      style={{
-                        maxWidth: 'clamp(7.5rem, 4.177rem + 13.5287vw, 15rem)',
-                      }}
-                    >
-                      {iconComponents[hoveredIcon].desc}
-                    </p>
-                  </div>
-                )}
-                <div
-                  className="ml-auto"
-                  style={{
-                    width: 'clamp(108px, 15vw, 180px)',
-                    height: 'clamp(40px, 6vw, 72px)',
-                  }}
-                >
-                  <ShweayButton
-                    label="contact"
-                    onClick={() =>
-                      window.scrollTo({
-                        top: document.documentElement.scrollHeight,
-                        behavior: 'smooth',
-                      })
-                    }
-                  />
+          <div className="flex items-end">
+            <div className="block md:hidden">
+              {hoveredIcon !== null && (
+                <div>
+                  <h5>[{iconComponents[hoveredIcon].label}]</h5>
+                  <p className="mt-1 max-w-[25ch]">{iconComponents[hoveredIcon].desc}</p>
                 </div>
-              </div>
+              )}
+            </div>
+
+            <div className="ml-auto aspect-[3/1] w-[6.375rem] md:w-[7.875rem] sxl:w-[9.875rem] 2xl:w-[11.875rem] 3xl:w-[13.875] 4xl:w-[15.875]">
+              <ShweayButton
+                label="contact"
+                onClick={() =>
+                  window.scrollTo({
+                    top: document.documentElement.scrollHeight,
+                    behavior: 'smooth',
+                  })
+                }
+              />
             </div>
           </div>
         </div>

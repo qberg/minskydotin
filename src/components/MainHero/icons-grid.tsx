@@ -31,7 +31,7 @@ const IconsGrid = ({ icons, hoveredIcon, setHoveredIcon }: IconsGridProps) => {
 
   return (
     <div
-      className="col-span-9 w-full grid grid-cols-3 place-items-center lg:grid-cols-9 xl:grid-cols-9"
+      className="col-span-9 w-full grid grid-cols-3 place-items-center lg:grid-cols-9"
       style={gridGapStyle}
     >
       {icons.map(({ Icon, LucideIcon, label }, index) => {
@@ -49,7 +49,7 @@ const IconsGrid = ({ icons, hoveredIcon, setHoveredIcon }: IconsGridProps) => {
           >
             {/* Static image (shown when not hovered) */}
             {!isHovered && (
-              <div className="relative" style={iconSizeStyle}>
+              <div className="relative aspect-[0.78/1] w-[2.625rem] md:w-[2.75rem] lg:w-[3.25rem] sxl:w-[4.625rem] 2xl:w-[5.125rem] 3xl:w-[5.875rem] 4xl:w-[6.25rem]">
                 <Image
                   src={Icon}
                   alt={label}
@@ -72,7 +72,7 @@ const IconsGrid = ({ icons, hoveredIcon, setHoveredIcon }: IconsGridProps) => {
 
                 {/* Animation component - only shown on xl screens */}
                 {AnimationComponent && (
-                  <div className="relative hidden xl:block">
+                  <div className="relative hidden md:block">
                     <AnimationComponent
                       title={`[${iconComponents[hoveredIcon].label}]`}
                       description={iconComponents[hoveredIcon].desc}
