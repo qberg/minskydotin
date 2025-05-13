@@ -36,7 +36,7 @@ const boxShadowVariants: Variants = {
 }
 
 const MainHero = () => {
-  const [hoveredIcon, setHoveredIcon] = useState<number | null>(5)
+  const [hoveredIcon, setHoveredIcon] = useState<number | null>(null)
 
   const heroRef = useRef<HTMLDivElement>(null)
 
@@ -101,7 +101,7 @@ const MainHero = () => {
               )}
             </div>
 
-            <div className="ml-auto aspect-[3/1] w-[6.375rem] md:w-[7.875rem] sxl:w-[9.875rem] 2xl:w-[11.875rem] 3xl:w-[13.875] 4xl:w-[15.875]">
+            <div className="ml-auto aspect-[3/1] w-[6.375rem] md:w-[7.875rem] sxl:w-[9.875rem] 2xl:w-[11.875rem] 3xl:w-[13.875] 4xl:w-[15.875] z-20">
               <ShweayButton
                 label="contact"
                 onClick={() =>
