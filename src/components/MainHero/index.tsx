@@ -64,10 +64,10 @@ const MainHero = () => {
         className="bg-black w-full rounded-2xl overflow-hidden h-[80svh] md:h-full md:max-h-[62rem] relative"
         style={{
           scale,
-          boxShadow: '0px 0px 160px 70px rgba(128, 128, 128, 0.3)',
+          boxShadow: '0px 0px 80px 40px rgba(128, 128, 128, 0.2)',
         }}
       >
-        <div className="bg-[url('/grid-bg-sm.svg')] md:bg-[url('/grid-bg-md.svg')] sxl:bg-[url('/grid-bg-sxl.svg')] 2xl:bg-[url('/grid-bg-2xl.svg')] 3xl:bg-[url('/grid-bg.svg')] bg-repeat absolute inset-0 w-full h-full"></div>
+        <div className="bg-[url('/grid-bg-md.svg')] md:bg-[url('/grid-bg-md.svg')] sxl:bg-[url('/grid-bg-sxl.svg')] 2xl:bg-[url('/grid-bg.svg')] 3xl:bg-[url('/grid-bg.svg')] bg-repeat absolute inset-0 w-full h-full"></div>
         {/*Monitor Content */}
         <div className="flex flex-col justify-between h-full w-full px-5 md:px-16 sxl:px-20 2xl:px-24 3xl:px-32 4xl:px-36 py-6 md:py-10 sxl:py-12 2xl:py-20 3xl:py-24 4xl:py-28 overflow-hidden">
           <h1 style={fontSize} className="text-secondary">
@@ -87,7 +87,7 @@ const MainHero = () => {
           </div>
 
           <div className="flex items-end">
-            <div className="block md:hidden">
+            <div className="block">
               {hoveredIcon !== null && (
                 <div>
                   <h5>[{iconComponents[hoveredIcon].label}]</h5>

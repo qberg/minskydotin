@@ -49,7 +49,7 @@ const IconsGrid = ({ icons, hoveredIcon, setHoveredIcon }: IconsGridProps) => {
           >
             {/* Static image (shown when not hovered) */}
             {!isHovered && (
-              <div className="relative aspect-[0.78/1] w-[2.625rem] md:w-[2.75rem] lg:w-[3.25rem] sxl:w-[4.625rem] 2xl:w-[5.125rem] 3xl:w-[5.875rem] 4xl:w-[6.25rem]">
+              <div className="relative aspect-[0.78/1] w-[3.25rem] md:w-[2.75rem] lg:w-[3.75rem] sxl:w-[5.5rem] 2xl:w-[6.5rem] 3xl:w-[6.75rem] 4xl:w-[7rem]">
                 <Image
                   src={Icon}
                   alt={label}
