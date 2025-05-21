@@ -61,7 +61,7 @@ const MainHero = () => {
       </div>
 
       <motion.div
-        className="bg-black w-full rounded-2xl overflow-hidden h-[70svh] md:h-full md:max-h-[62rem] relative"
+        className="bg-black w-full rounded-2xl overflow-hidden h-[75svh] md:h-full md:max-h-[62rem] relative"
         style={{
           scale,
           boxShadow: '0px 0px 160px 70px rgba(128, 128, 128, 0.45)',
@@ -95,7 +95,7 @@ const MainHero = () => {
               )}
             </div>
 
-            <div className="ml-auto aspect-[3/1] w-[6.375rem] md:w-[7.875rem] sxl:w-[9.875rem] 2xl:w-[11.875rem] 3xl:w-[13.875] 4xl:w-[15.875] z-20">
+            <div className="ml-auto aspect-[3/1] w-[6.375rem] md:w-[7.875rem] sxl:w-[9.875rem] 2xl:w-[11.875rem] 3xl:w-[13.875rem] 4xl:w-[15.875rem] z-20">
               <ShweayButton
                 label="contact"
                 onClick={() =>
