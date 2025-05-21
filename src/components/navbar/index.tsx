@@ -33,7 +33,9 @@ const Navbar: React.FC = () => {
     >
       <nav className="w-full max-w-[1760px] 3xl:max-w-[2160px] 4xl:max-w-[2200px] mx-auto px-8 py-4 flex justify-between items-center h-[var(--navbar-height)]">
         <TransitionLink href="/" className="flex items-center bg-transparent">
-          <Image src="/logo.svg" alt="Minsky logo" width={120} height={40} priority />
+          <div className="relative w-28 h-28 -ml-4 md:ml-0 mt-1">
+            <Image src="/logo.svg" alt="Minsky logo" fill priority className="object-cover" />
+          </div>
         </TransitionLink>
 
         <div className="hidden sm:flex  items-center justify-between w-[350px] bg-navbar-background px-2 py-2 rounded-lg">

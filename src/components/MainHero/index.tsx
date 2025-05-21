@@ -1,19 +1,20 @@
 'use client'
 
-import { motion, useScroll, useTransform, Variants } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
 
 import { useRef, useState } from 'react'
 import CodingWordsBackground from '@/components/MainHero/coding-words-bg'
 import ShweayButton from '@/components/ui/shweay-button'
 import { iconComponents } from '@/data/main-hero/icons'
 import IconsGrid from '@/components/MainHero/icons-grid'
-import InteractiveGrid from '@/components/backgrounds/interactive-grid'
 import { WordAnimation } from '@/components/word-animation'
 
 const fontSize = {
   fontSize: 'clamp(1.75rem, 1.1964rem + 2.7679vw, 5.625rem)',
 }
 
+{
+  /*
 const boxShadowVariants: Variants = {
   initial: {
     boxShadow: '0px 0px 0px 0px rgba(128, 128, 128, 0.1)',
@@ -22,7 +23,6 @@ const boxShadowVariants: Variants = {
     boxShadow: [
       '0px 0px 80px 30px rgba(128, 128, 128, 0.25)',
       '0px 0px 120px 50px rgba(128, 128, 128, 0.35)',
-      '0px 0px 160px 70px rgba(128, 128, 128, 0.45)',
       '0px 0px 120px 50px rgba(128, 128, 128, 0.35)',
       '0px 0px 80px 30px rgba(128, 128, 128, 0.25)',
     ],
@@ -33,6 +33,8 @@ const boxShadowVariants: Variants = {
       ease: [0.42, 0, 0.58, 1], // easeInOutCubic
     },
   },
+}
+*/
 }
 
 const MainHero = () => {
@@ -52,27 +54,19 @@ const MainHero = () => {
     <motion.section
       style={{ opacity: opacity }}
       ref={heroRef}
-      className="relative h-[calc(100svh-var(--navbar-height))] flex items-center md:items-stretch justify-center p-5 md:px-10 lg:px-16 sxl:px-24 2xl:px-28 3xl:px-32 4xl:px-40 md:py-5 lg:py-8 sxl:py-12 2xl:py-14 3xl:py-16 4xl:py-20"
+      className="relative h-[calc(100svh-var(--navbar-height))] flex items-center justify-center p-5 md:px-10 lg:px-16 sxl:px-24 2xl:px-28 3xl:px-32 4xl:px-40 md:py-5 lg:py-8 sxl:py-12 2xl:py-14 3xl:py-16 4xl:py-20"
     >
       <div className="absolute inset-0 -z-20">
         <CodingWordsBackground />
       </div>
 
       <motion.div
-        variants={boxShadowVariants}
-        initial="initial"
-        animate="animate"
-        className="bg-black w-full rounded-2xl overflow-hidden h-[32rem] md:h-full relative"
+        className="bg-black w-full rounded-2xl overflow-hidden h-[70svh] md:h-full md:max-h-[62rem] relative"
         style={{
           scale,
+          boxShadow: '0px 0px 160px 70px rgba(128, 128, 128, 0.45)',
         }}
       >
-        <InteractiveGrid
-          cellSize={64}
-          gridColor="rgba(128, 128, 128, 0.1)"
-          highlightColor="rgba(1, 212, 107, 1.0)"
-          fadeTime={1500}
-        />
         {/*Monitor Content */}
         <div className="flex flex-col justify-between h-full w-full px-5 md:px-16 sxl:px-20 2xl:px-24 3xl:px-32 4xl:px-36 py-6 md:py-10 sxl:py-12 2xl:py-20 3xl:py-24 4xl:py-28 overflow-hidden">
           <h1 style={fontSize} className="text-secondary">

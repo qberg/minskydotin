@@ -72,7 +72,7 @@ const IconsGrid = ({ icons, hoveredIcon, setHoveredIcon }: IconsGridProps) => {
 
                 {/* Animation component - only shown on xl screens */}
                 {AnimationComponent && (
-                  <div className="relative hidden md:block">
+                  <div className="relative hidden">
                     <AnimationComponent
                       title={`[${iconComponents[hoveredIcon].label}]`}
                       description={iconComponents[hoveredIcon].desc}
