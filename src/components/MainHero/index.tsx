@@ -10,7 +10,7 @@ import IconsGrid from '@/components/MainHero/icons-grid'
 import { WordAnimation } from '@/components/word-animation'
 
 const fontSize = {
-  fontSize: 'clamp(1.75rem, 1.1964rem + 2.7679vw, 5.625rem)',
+  fontSize: 'clamp(2.25rem, 1.6379rem + 2.4919vw, 5.625rem)',
 }
 
 {
@@ -61,10 +61,10 @@ const MainHero = () => {
       </div>
 
       <motion.div
-        className="bg-black w-full rounded-2xl overflow-hidden h-[75svh] md:h-full md:max-h-[62rem] relative"
+        className="bg-black w-full rounded-2xl overflow-hidden h-[80svh] md:h-full md:max-h-[62rem] relative"
         style={{
           scale,
-          boxShadow: '0px 0px 160px 70px rgba(128, 128, 128, 0.45)',
+          boxShadow: '0px 0px 160px 70px rgba(128, 128, 128, 0.3)',
         }}
       >
         {/*Monitor Content */}

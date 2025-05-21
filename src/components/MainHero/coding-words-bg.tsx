@@ -200,7 +200,7 @@ const CodingWordsBackground = () => {
           className="whitespace-nowrap overflow-hidden text-matrix-green"
           style={{
             fontSize: '16px',
-            opacity: 0.15, // Ensure opacity is exactly 15%
+            opacity: 0.1, // Ensure opacity is exactly 15%
             lineHeight: '1.5em',
             width: '100%',
           }}
